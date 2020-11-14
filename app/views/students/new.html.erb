@@ -1,51 +1,47 @@
-<h2 class="student_reg">生徒新規登録</h2>
+<h3 class="table">生徒新規登録</h3>
+<br>
 <%= form_with(model: Student.new, local: true) do |form| %>
-  <div class="student_reg">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-  <br>
-  <div class="student_reg">
-    <%= form.label :course %>
-    <%= select :course, :name, Student.courses.keys.to_a, include_blank: true %>
-  </div>
-  <br>
-  <div class="student_reg">
-    <%= form.label :enrollment_status %>
-    <%= select :enrollment_status, :name, Student.enrollment_statuses.keys.to_a, include_blank: true %>
-  </div>
-  <br>
-  <div class="student_reg">
-    <%= form.label :site %>
-    <%= select :site, :name, Student.sites.keys.to_a, include_blank: true %>
-  </div>
-  <br>
-  <div class="student_reg">
-    <%= form.label :school_year %>
-    <%= select :school_year, :name, Student.school_years.keys.to_a, include_blank: true %><br>
-  </div>
-  <br>
-  <div class="student_reg">
-    <%= form.label :parent_name %>
-    <%= form.text_field :name %>
-  </div>
-  <br>
-  <div class="student_reg">
-    <%= form.label :phone_number %>
-    <%= form.telephone_field :isbn,size:15,maxlength:20 %> 
-  </div>
-  <br>
-  <div class="student_reg">
-    <%= form.label :email_address %>
-    <%= form.email_field :isbn,size:25 ,maxlength:30 %>
-  </div>
-  <br>
-  <div class="student_reg">
-    <%= form.label :live_address %>
-    <%= form.text_field :address %>
-  </div>
-  <br>
-  <br>
-  <%= form.submit %>
+  <div class="container">  
+    <table class="table">
+      <div class=title><%= form.label :名前 %></div>
+      <%= form.text_field :name %>
+    <table class="table">
+      <%= form.label :所属コース %>
+      <%= select :course, :name, Student.courses.keys.to_a, include_blank: true %>
+    <br>
+    <table class="table">
+      <%= form.label :在席状況 %>
+      <%= select :enrollment_status, :name, Student.enrollment_statuses.keys.to_a, include_blank: true %>
+    <br>
+    <table class="table">
+      <%= form.label :校舎 %>
+      <%= select :site, :name, Student.sites.keys.to_a, include_blank: true %>
+    <br>
+    <table class="table">
+      <%= form.label :学年 %>
+      <%= select :school_year, :name, Student.school_years.keys.to_a, include_blank: true %> 
+    <br>
+    <table class="table">
+      <%= form.label :保護者名 %>
+      <%= form.text_field :name %>
+    <br>
+    <table class="table">
+      <%= form.label :電話番号 %>
+      <%= form.telephone_field :isbn,size:15,maxlength:20 %> 
+
+    <br>
+    <table class="table">
+      <%= form.label :メールアドレス %>
+      <%= form.email_field :isbn,size:25 ,maxlength:30 %>
+
+    <br>
+    <table class="table">
+      <%= form.label :住所 %>
+      <%= form.text_field :address %>
+    <br>
+    <br>
+    <br>
+
+    <%= form.submit "Submit" %>
 
 <% end %>
