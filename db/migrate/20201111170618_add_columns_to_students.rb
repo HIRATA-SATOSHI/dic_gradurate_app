@@ -1,15 +1,17 @@
 class AddColumnsToStudents < ActiveRecord::Migration[5.2]
   def change
     create_table :students do |t|
-      t.string :name
-      t.string :course
-      t.integer :enrollment_status
-      t.integer :site
+      t.string :name, default: "", null: false
+      t.string :course, null: false
+      t.integer :enrollment_status, null: false
+      t.integer :site, null: false
       t.integer :school_year
-      t.string :parent_name
+      t.string :parent_name, null: false
       t.string :phone_number
-      t.string :email_address
+      t.string :email_address, null: false
       t.text :live_address
+
+      t.timestamps
     end
   end
 end
