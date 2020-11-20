@@ -1,9 +1,16 @@
 .container{
-  text-align: center;
+text-align: center;
 }
 
-.title{
+.label{
   color: white;
+  text-align: right;
+  font-style: HiraKakuPro-W6;
+  font-size: 15px;
+}
+
+.field{
+  text-align: left;
 }
 
 .table{
@@ -12,14 +19,12 @@
 
 form{
   background-color:#005FFF;
-
   padding-top: 30px;
-  padding-right: 40px;
-  padding-left: 40px;
-  margin: 20px 90px 90px 90px;
+  padding-bottom: 30px;
+  margin-left: 70px;
+  margin-right: 70px;
+
 }
 
-form.submit{
-  color:red;
-}
+
 

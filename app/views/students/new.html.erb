@@ -2,46 +2,47 @@
 <br>
 <%= form_with(model: Student.new, local: true) do |form| %>
   <div class="container">  
-    <table class="table">
-      <div class=title><%= form.label :名前 %></div>
-      <%= form.text_field :name %>
-    <table class="table">
-      <%= form.label :所属コース %>
-      <%= select :course, :name, Student.courses.keys.to_a, include_blank: true %>
-    <br>
-    <table class="table">
-      <%= form.label :在席状況 %>
-      <%= select :enrollment_status, :name, Student.enrollment_statuses.keys.to_a, include_blank: true %>
-    <br>
-    <table class="table">
-      <%= form.label :校舎 %>
-      <%= select :site, :name, Student.sites.keys.to_a, include_blank: true %>
-    <br>
-    <table class="table">
-      <%= form.label :学年 %>
-      <%= select :school_year, :name, Student.school_years.keys.to_a, include_blank: true %> 
-    <br>
-    <table class="table">
-      <%= form.label :保護者名 %>
-      <%= form.text_field :name %>
-    <br>
-    <table class="table">
-      <%= form.label :電話番号 %>
-      <%= form.telephone_field :isbn,size:15,maxlength:20 %> 
+    <ul class="row">
 
+      <div class="col-md-6 label"><%= form.label :名前 %></div>
+      <div class="col-md-6 field"><%= form.text_field :name %></div>
+    </ul>
+    <ul class="row">
+      <div class="col-md-6 label"><%= form.label :所属コース %></div>
+      <div class="col-md-6 field"><%= select :course, :name, Student.courses.keys.to_a, include_blank: true %></div>
+    </ul>
+    <ul class="row">
+      <div class="col-md-6 label"><%= form.label :在席状況 %></div>
+      <div class="col-md-6 field"><%= select :enrollment_status, :name, Student.enrollment_statuses.keys.to_a, include_blank: true %></div>
+    </ul>
+    <ul class="row">
+      <div class="col-md-6 label"><%= form.label :校舎 %></div>
+      <div class="col-md-6 field"><%= select :site, :name, Student.sites.keys.to_a, include_blank: true %></div>
+    </ul>
+    <ul class="row">
+      <div class="col-md-6 label"><%= form.label :学年 %></div>
+      <div class="col-md-6 field"><%= select :school_year, :name, Student.school_years.keys.to_a, include_blank: true %></div>
+    </ul>
+    <ul class="row">
+      <div class="col-md-6 label"><%= form.label :保護者名 %></div>
+      <div class="col-md-6 field"><%= form.text_field :name %><div>
+    </ul>
+    <ul class="row">
+      <div class="col-md-6 label"><%= form.label :電話番号 %></div>
+      <div class="col-md-6 field"><%= form.telephone_field :isbn,size:15,maxlength:20 %></div>
+    </ul>
+    <ul class="row">
+      <div class="col-md-6 label"><%= form.label :メールアドレス %></div>
+      <div class="col-md-6 field"><%= form.email_field :isbn,size:25 ,maxlength:30 %></div>
+    </ul>
+    <ul class="row">
+      <div class="col-md-6 label"><%= form.label :住所 %></div>
+      <div class="col-md-6 field"><%= form.text_field :address %></div>
+    </ul>
     <br>
-    <table class="table">
-      <%= form.label :メールアドレス %>
-      <%= form.email_field :isbn,size:25 ,maxlength:30 %>
-
-    <br>
-    <table class="table">
-      <%= form.label :住所 %>
-      <%= form.text_field :address %>
     <br>
     <br>
-    <br>
-
+  
     <%= form.submit "Submit" %>
-
+  </div>
 <% end %>
