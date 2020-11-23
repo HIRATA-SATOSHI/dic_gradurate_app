@@ -15,5 +15,31 @@
     <% end %>  
   </ul>
 </div>
+<br>
 
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>student_id</th>
+      <th>name</th>
+      <th>site</th>
+      <th>course</th>
+      <th>enrollment_status</th>
+      <th>deliete</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.id %></td>
+        <td><%= student.name %></td>
+        <td><%= student.site %></td>
+        <td><%= student.course %></td>
+        <td><%= student.enrollment_status %></td>
+        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
