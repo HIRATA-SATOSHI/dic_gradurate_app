@@ -4,7 +4,7 @@ class StudentsController < ApplicationController
   end
 
   def create
-    binding.pry
+    
     @student = Student.new(student_params)
     redirect_to students_path
   end
