@@ -1,2 +1,19 @@
-<h1>Students#index</h1>
-<p>Find me in app/views/students/index.html.erb</p>
+<div class = "container">
+  <ul style="list-style: none;" class="row">
+    <li class="col-md-12">氏名検索<%= form_with(model: Student.new, method: :get, local: true, url: students_path) do |form| %></li>
+      <li><%= form.text_field :name %><li/>
+    <li class="col-md-12">コース検索</li>
+    <li><%= form.select :course, [["level1", "0"], ["level2", "1"], ["level3", "2"], ["level4", "3"], ["scholars", "4"], ["liberal_arts", "5"]], include_blank: "選択して下さい" %></li>    
+    <li class="col-md-12">校舎検索</li>
+    <li><%= form.select :site, [["jiyugaoka", "0"], ["shibuya", "1"], ["kichijoji", "2"], ["yotsuya", "3"], ["sakata", "4"]], include_blank: "選択して下さい" %></li>
+    <li class="col-md-12">学年検索</li>
+    <li><%= form.select :school_year, [["fifth_grader", "0"], ["sixth_grader", "1"], ["seventh_grader", "2"], ["eighth_grader", "3"], ["ninth_grader", "4"], ["tenth_grader", "5"], ["eleventh_grader", "6"], ["twelfth_grader", "7"]], include_blank: "選択して下さい" %></li>
+    <li class="col-md-12">在籍状況検索</li>
+    <li><%= form.select :enrollment_status, [["yes", "0"], ["no", "1"], ["break", "2"]], include_blank: "選択して下さい" %></li>
+    <br>
+    <li><%= form.submit '検索' %></li>
+    <% end %>  
+  </ul>
+</div>
+
+

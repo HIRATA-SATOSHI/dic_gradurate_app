@@ -1,31 +1,31 @@
 class Student < ApplicationRecord
-  enum course: {L1: 0,
-    L2: 1,
-    L3: 2,
-    L4: 3,
+  enum course: {level1: 0,
+    level2: 1,
+    level3: 2,
+    level4: 3,
     scholars: 4,
     liberal_arts: 5
   }
 
-  enum enrollment_status: {Yes: 0,
-    No: 1,
-    Break: 2
+  enum enrollment_status: {yes: 0,
+    no: 1,
+    break: 2
   }
 
-  enum site: {自由が丘: 0,
-    渋谷: 1,
-    吉祥寺: 2,
-    四谷: 3,
-    酒田: 4
+  enum site: {jiyugaoka: 0,
+    shibuya: 1,
+    kichijoji: 2,
+    yotsuya: 3,
+    sakata: 4
   }
 
-  enum school_year: {小5: 0,
-    小6: 1,
-    中1: 2,
-    中2: 3,
-    中3: 4,
-    高1: 5,
-    高2: 6,
-    高3: 7
+  enum school_year: {fifth_grader: 0,
+    sixth_grader: 1,
+    seventh_grader: 2,
+    eighth_grader: 3,
+    ninth_grader: 4,
+    tenth_grader: 5,
+    eleventh_grader: 6,
+    twelfth_grader: 7
   }
 end
