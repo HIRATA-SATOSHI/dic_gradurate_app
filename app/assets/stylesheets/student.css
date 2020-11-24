@@ -29,6 +29,10 @@ body {
   color:white;
 }
 
+.create{
+  text-align: center;
+}
+
 /* .fas fa-user {
   float: right;
 } */
@@ -41,3 +45,4 @@ body {
   margin-right: 70px;
 } */
 /*# sourceMappingURL=student.css.map */
+
