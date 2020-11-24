@@ -32,7 +32,7 @@
   <tbody>
     <% @students.each do |student| %>
       <tr>
-        <td><%= student.id %></td>
+        <td><%= link_to student.id, student_path(student.id) %></td>
         <td><%= student.name %></td>
         <td><%= student.site %></td>
         <td><%= student.course %></td>
