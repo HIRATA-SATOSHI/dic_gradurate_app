@@ -1,19 +1,67 @@
+<br>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @student.name %>
-</p>
+<div class="container">  
+<table class="table">
+  <ul class="row">
+    <div class="col-md-6 label"><strong>Name:</strong></div>
+    <div class="col-md-6 field"><%= @student.name %></div>
+  </ul>
 
-<p>
-  <strong>Course:</strong>
-  <%= @student.course %>
-</p>
+  <ul class="row">
+   <div class="col-md-6 label"><strong>Course:</strong></div>
+   <div class="col-md-6 field"><%= @student.course %></div>
+  </ul>
 
-<p>
-  <strong>Site:</strong>
-  <%= @student.site %>
-</p>
+  <ul class="row">
+   <div class="col-md-6 label"><strong>enrollment_status:</strong></div>
+   <div class="col-md-6 field"><%= @student.enrollment_status %></div></div>
+  </ul>
 
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
+  <ul class="row">
+    <div class="col-md-6 label"><strong>Site:</strong></div>
+    <div class="col-md-6 field"><%= @student.site %></div>
+  </ul>
+
+  <ul class="row">
+    <div class="col-md-6 label"><strong>school_year:</strong></div>
+    <div class="col-md-6 field"><%= @student.school_year %></div>
+  </ul>
+
+  <ul class="row">
+    <div class="col-md-6 label"><strong>parent_name:</strong></div>
+    <div class="col-md-6 field"><%= @student.parent_name %></div>
+  </ul>
+
+  <ul class="row">
+    <div class="col-md-6 label"><strong>phone_number:</strong></div>
+    <div class="col-md-6 field"><%= @student.phone_number %></div>
+  </ul>
+
+  <ul class="row">
+    <div class="col-md-6 label"><strong>email_address:</strong></div>
+    <div class="col-md-6 field"><%= @student.email_address %></div>
+  </ul>
+
+  <ul class="row">
+    <div class="col-md-6 label"><strong>live_address:</strong></div>
+    <div class="col-md-6 field"><%= @student.live_address %></div>
+  </ul>
+
+  <ul class="row">
+    <div class="col-md-6 label"><strong>created_at:</strong></div>
+    <div class="col-md-6 field"><%= @student.created_at %></div>
+  </ul>
+
+  <ul class="row">
+    <div class="col-md-6 label"><strong>updated_at:</strong></div>
+    <div class="col-md-6 field"><%= @student.updated_at %></div>
+  </ul>
+
+<table class="table">
+</div>
+
+<br>
+<%= link_to 'Edit', edit_student_path(@student) %>
+<br>
+<%= link_to 'To Student_index', students_path %>

@@ -1,21 +1,8 @@
-<h1>Editing Student</h1>
-
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @student.name %>
-</p>
-
-<p>
-  <strong>Course:</strong>
-  <%= @student.course %>
-</p>
-
-<p>
-  <strong>Site:</strong>
-  <%= @student.site %>
-</p>
+編集モード
+<br>
+<%= render 'form', student: @student %>
 
 <%= link_to 'Show', @student %> |
 <%= link_to 'Back', students_path %>
+
+

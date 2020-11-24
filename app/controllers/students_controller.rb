@@ -13,7 +13,6 @@ class StudentsController < ApplicationController
   end
 
   def edit
-   @student = Student.find(params[:id])
   end
 
   def create
@@ -46,11 +45,11 @@ class StudentsController < ApplicationController
 
 
   private
-  def student_params
-    params.require(:student).permit(:name, :course, :enrollment_status, :site, :school_year, :parent_name, :phone_number, :email_address, :live_address)
-  end
-
   def set_student
     @student = Student.find(params[:id])
+  end
+
+  def student_params
+    params.require(:student).permit(:name, :course, :enrollment_status, :site, :school_year, :parent_name, :phone_number, :email_address, :live_address)
   end
 end
