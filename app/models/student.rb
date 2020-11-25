@@ -1,8 +1,8 @@
 class Student < ApplicationRecord
-  enum course: {level1: 0,
-    level2: 1,
-    level3: 2,
-    level4: 3,
+  enum course: {level_1: 0,
+    level_2: 1,
+    level_3: 2,
+    level_4: 3,
     scholars: 4,
     liberal_arts: 5
   }

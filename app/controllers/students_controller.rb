@@ -2,7 +2,8 @@ class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
   def index
-    @students= Student.all
+    @q = Student.ransack(params[:id])
+    @student = @q.result(district: true)
   end
 
   def show

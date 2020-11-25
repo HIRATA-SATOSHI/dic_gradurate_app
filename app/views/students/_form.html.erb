@@ -1,4 +1,5 @@
 <%= form_with(model: student, local: true) do |form| %>  
+
   <div class="container">  
     <ul class="row">
 
@@ -43,6 +44,9 @@
   
   <div class="actions">
     <%= form.submit "Submit" %>
+    <br>
+    <br>
+    <%= link_to 'Back to Student_index', students_path %>
   </div>
 
   </div>
