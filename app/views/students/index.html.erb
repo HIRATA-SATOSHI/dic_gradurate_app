@@ -1,8 +1,3 @@
-<div class= create>
-  <%= link_to 'New_Student_Create', new_student_path %>
-</div>
-<br>
-
 <%= search_form_for @q do |f| %>
     <%= f.label :student, "name search" %>
     <%= f.search_field :name_cont %>
@@ -19,7 +14,7 @@
     <%= f.radio_button :site_eq, 3 %>yotsuya
     <%= f.radio_button :site_eq, 4 %>sakata
 
-    <%= f.label :Enrollment_status %>
+    <%= f.label :enrollment_status %>
     <%= f.radio_button :enrollment_status_eq, '', {:checked => true} %>指定なし
     <%= f.radio_button :enrollment_status_eq, 0 %>yes
     <%= f.radio_button :enrollment_status_eq, 1 %>no
@@ -31,15 +26,19 @@
 
 <br>
 <br>
+<div class= create>
+  <%= link_to 'New_Student_Create', new_student_path %>
+</div>
+<br>
  
 <table class="table table-bordered table-hover">
   <thead>
     <tr>
-      <th><%= sort_link(@q, :id, "Student_id") %></th>
-      <th>Name</th>
-      <th><%= sort_link(@q, :site, "Site") %></th>
-      <th><%= sort_link(@q, :course, "Course") %></th>
-      <th><%= sort_link(@q, :enrollment_status, "Enrollment_status") %></th>
+      <th><%= sort_link(@q, :id, "student_id") %></th>
+      <th>name</th>
+      <th><%= sort_link(@q, :site, "site") %></th>
+      <th><%= sort_link(@q, :course, "course") %></th>
+      <th><%= sort_link(@q, :enrollment_status, "enrollment_status") %></th>
       <th>deliete</th>
     </tr>
   </thead>

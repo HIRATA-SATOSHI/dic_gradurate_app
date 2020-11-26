@@ -1,4 +1,12 @@
 class Student < ApplicationRecord
+  validates :name, presence: true
+  validates :course, presence: true
+  validates :enrollment_status, presence: true
+  validates :site, presence: true
+  validates :school_year, presence: true
+  validates :parent_name, presence: true
+  validates :email_address, presence: true
+
   enum course: {level_1: 0,
     level_2: 1,
     level_3: 2,
