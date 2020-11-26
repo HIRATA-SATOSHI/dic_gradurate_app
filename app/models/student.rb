@@ -1,4 +1,5 @@
 class Student < ApplicationRecord
+
   validates :name, presence: true
   validates :course, presence: true
   validates :enrollment_status, presence: true
