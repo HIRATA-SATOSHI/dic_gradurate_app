@@ -6,10 +6,25 @@
 <%= search_form_for @q do |f| %>
     <%= f.label :student, "name search" %>
     <%= f.search_field :name_cont %>
-    <br>
+
     <%= f.label :id, "student_id search" %>
     <%= f.number_field :id_gteq %>〜
     <%= f.number_field :id_lt %>
+
+    <%= f.label :site %>
+    <%= f.radio_button :site_eq, '', {:checked => true} %>指定なし
+    <%= f.radio_button :site_eq, 0 %>jiyugaoka
+    <%= f.radio_button :site_eq, 1 %>shibuya
+    <%= f.radio_button :site_eq, 2 %>kichijoji
+    <%= f.radio_button :site_eq, 3 %>yotsuya
+    <%= f.radio_button :site_eq, 4 %>sakata
+
+    <%= f.label :Enrollment_status %>
+    <%= f.radio_button :enrollment_status_eq, '', {:checked => true} %>指定なし
+    <%= f.radio_button :enrollment_status_eq, 0 %>yes
+    <%= f.radio_button :enrollment_status_eq, 1 %>no
+    <%= f.radio_button :enrollment_status_eq, 2 %>break
+
 
     <%= f.submit "検索" %>
 <% end %>
