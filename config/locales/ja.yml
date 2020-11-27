@@ -9,9 +9,9 @@ ja:
           has_many: "%{record}が存在しているので削除できません"
     
     models:
-      students: 生徒   
+      student: 生徒   
     attributes:
-      students:
+      student:
         name: 生徒氏名
         course: 通塾コース
         enrollment_status: 在籍状況
