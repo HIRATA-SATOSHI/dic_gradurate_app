@@ -22,28 +22,35 @@ ja:
         email_address: メールアドレス
         live_address: 住所
 
-  # enum:
-  #   students:
-  #     enrollment_status:
-  #       yes: 通塾
-  #       no: 退塾
-  #       break: 休塾
-  #     site:
-  #       jiyugaoka: 自由が丘
-  #       shibuya: 渋谷
-  #       kichijoji: 吉祥寺
-  #       yotsuya: 四谷
-  #       sakata: 酒田             
+  enums:
+    students:
+      enrollment_status:
+        yes: 通塾中
+        no: 退塾
+        break: 休塾
+      site:
+        jiyugaoka: 自由が丘
+        shibuya: 渋谷
+        kichijoji: 吉祥寺
+        yotsuya: 四谷
+        sakata: 酒田
+      course:
+        level_1: レベル1
+        level_2: レベル2
+        level_3: レベル3
+        level_4: レベル4
+        scholars: scholars
+        liberal_arts: Liberal arts     
       
-  #     school_year: 学年     
-  #       fifth_grader: 小5
-  #       sixth_grader: 小6
-  #       seventh_grader: 中1
-  #       eighth_grader: 中2
-  #       ninth_grader: 中3
-  #       tenth_grader: 高1
-  #       eleventh_grader: 高2
-  #       stwelfth_grader: 高3     
+      school_year:      
+        fifth_grader: 小5
+        sixth_grader: 小6
+        seventh_grader: 中1
+        eighth_grader: 中2
+        ninth_grader: 中3
+        tenth_grader: 高1
+        eleventh_grader: 高2
+        stwelfth_grader: 高3     
 
   date:
     abbr_day_names:

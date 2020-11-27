@@ -34,12 +34,12 @@
 <table class="table table-bordered table-hover">
   <thead>
     <tr>
-      <th><%= sort_link(@q, :id, "student_id") %></th>
-      <th>name</th>
-      <th><%= sort_link(@q, :site, "site") %></th>
-      <th><%= sort_link(@q, :course, "course") %></th>
-      <th><%= sort_link(@q, :enrollment_status, "enrollment_status") %></th>
-      <th>deliete</th>
+      <th><%= sort_link(@q, :id, "生徒ID") %></th>
+      <th>生徒氏名</th>
+      <th><%= sort_link(@q, :site, "通学校舎") %></th>
+      <th><%= sort_link(@q, :course, "コース") %></th>
+      <th><%= sort_link(@q, :enrollment_status, "在籍状況") %></th>
+      <th>削除</th>
     </tr>
   </thead>
 
@@ -48,9 +48,9 @@
       <tr>
         <td><%= link_to student.id, student_path(student.id) %></td>
         <td><%= student.name %></td>
-        <td><%= student.site %></td>
-        <td><%= student.course %></td>
-        <td><%= student.enrollment_status %></td>
+        <td><%= student.site_i18n %></td>
+        <td><%= student.course_i18n %></td>
+        <td><%= student.enrollment_status_i18n %></td>
         <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
