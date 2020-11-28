@@ -44,6 +44,12 @@ class StudentsController < ApplicationController
     end
   end
 
+  # def destroy_all
+  #   checked_data = params[:deletes].keys # ここでcheckされたデータを受け取っています。
+  #   if @student.destroy(checked_data)
+  #     redirect_to students_path
+  #   end
+  # end
 
   private
   def set_student

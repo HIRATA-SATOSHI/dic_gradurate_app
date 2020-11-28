@@ -190,6 +190,8 @@ ja:
       create: 登録する
       submit: 保存する
       update: 更新する
+    link:
+      create: 作成する
   number:
     currency:
       format:
