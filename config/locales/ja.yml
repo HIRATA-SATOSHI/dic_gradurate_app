@@ -50,7 +50,7 @@ ja:
         ninth_grader: 中3
         tenth_grader: 高1
         eleventh_grader: 高2
-        stwelfth_grader: 高3     
+        twelfth_grader: 高3     
 
   date:
     abbr_day_names:

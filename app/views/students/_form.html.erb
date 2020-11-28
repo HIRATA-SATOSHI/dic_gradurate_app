@@ -19,15 +19,15 @@
     </ul>
     <ul class="row">
       <div class="col-md-6 label"><%= form.label :course %></div>
-      <div class="col-md-6 field"><%= form.select :course, Student.courses_i18n.invert.to_a %></div>
+      <div class="col-md-6 field"><%= form.select :course, Student.courses_i18n.invert %></div>
     </ul>
     <ul class="row">
       <div class="col-md-6 label"><%= form.label :enrollment_status %></div>
-      <div class="col-md-6 field"><%= form.select :enrollment_status, Student.enrollment_statuses_i18n.invert.to_a %></div>
+      <div class="col-md-6 field"><%= form.select :enrollment_status, Student.enrollment_statuses_i18n.invert %></div>
     </ul>
     <ul class="row">
       <div class="col-md-6 label"><%= form.label :site %></div>
-      <div class="col-md-6 field"><%= form.select :site, Student.sites_i18n.invert.to_a %></div>
+      <div class="col-md-6 field"><%= form.select :site, Student.sites_i18n.invert %></div>
     </ul>
     <ul class="row">
       <div class="col-md-6 label"><%= form.label :school_year %></div>
