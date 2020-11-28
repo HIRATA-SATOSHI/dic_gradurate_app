@@ -23,7 +23,7 @@ ja:
         live_address: 住所
 
   enums:
-    students:
+    student:
       enrollment_status:
         yes: 通塾中
         no: 退塾
