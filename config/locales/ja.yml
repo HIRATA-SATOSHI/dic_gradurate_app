@@ -25,8 +25,8 @@ ja:
   enums:
     student:
       enrollment_status:
-        yes: 通塾中
-        no: 退塾
+        yyes: 通塾中
+        nno: 退塾
         break: 休塾
       site:
         jiyugaoka: 自由が丘

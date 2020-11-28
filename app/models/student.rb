@@ -9,7 +9,7 @@ class Student < ApplicationRecord
     liberal_arts: 5
   }
 
-  enum enrollment_status: {yes: 0, no: 1, break: 2 }
+  enum enrollment_status: {yyes: 0, nno: 1, break: 2 }
 
   enum site: {jiyugaoka: 0, shibuya: 1, kichijoji: 2, yotsuya: 3, sakata: 4 }
 

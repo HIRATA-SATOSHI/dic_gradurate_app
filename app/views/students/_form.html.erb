@@ -31,7 +31,7 @@
     </ul>
     <ul class="row">
       <div class="col-md-6 label"><%= form.label :school_year %></div>
-      <div class="col-md-6 field"><%= form.select :school_year, Student.school_years_i18n.invert.to_a %></div>
+      <div class="col-md-6 field"><%= form.select :school_year, Student.school_years_i18n.invert %></div>
     </ul>
     <ul class="row">
       <div class="col-md-6 label"><%= form.label :parent_name %></div>
