@@ -152,6 +152,8 @@ GEM
       activesupport (>= 5.2.1)
       i18n
       polyamorous (= 2.3.2)
+    ransack-enum (0.3.0)
+      ransack (~> 2.0)
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -222,6 +224,7 @@ DEPENDENCIES
   rails (~> 5.2.4)
   rails-i18n
   ransack
+  ransack-enum (~> 0.3)
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
