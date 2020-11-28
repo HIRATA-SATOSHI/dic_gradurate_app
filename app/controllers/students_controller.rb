@@ -4,6 +4,9 @@ class StudentsController < ApplicationController
   def index
     @q = Student.ransack(params[:q])
     @student = @q.result(district: true)
+    respond_to do |format|
+      format.html { @student = @student.page(params[:page]) }
+    end
   end
 
   def show
@@ -42,6 +45,10 @@ class StudentsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to students_url, notice: 'Student was successfully destroyed.' }
     end
+  end
+
+  def confirm
+    @student = Student.new(student_params)
   end
 
   # def destroy_all
