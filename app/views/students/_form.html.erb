@@ -19,21 +19,20 @@
     </ul>
     <ul class="row">
       <div class="col-md-6 label"><%= form.label :course %></div>
-      <div class="col-md-6 field"><%= form.select :course, Student.courses.keys.map {|k| [I18n.t("enums.course.#{k}"), k]}, include_blank: true %></div>
+      <div class="col-md-6 field"><%= form.select :course, Student.courses_i18n.invert.to_a %></div>
     </ul>
     <ul class="row">
       <div class="col-md-6 label"><%= form.label :enrollment_status %></div>
-      <div class="col-md-6 field"><%= form.select :enrollment_status, Student.enrollment_statuses.keys.map {|k| [I18n.t("enums.enrollment_statuses.#{k}"), k]}, include_blank: "選択して下さい" %></div>
-
+      <div class="col-md-6 field"><%= form.select :enrollment_status, Student.enrollment_statuses_i18n.invert.to_a %></div>
     </ul>
     <ul class="row">
       <div class="col-md-6 label"><%= form.label :site %></div>
-      <div class="col-md-6 field"><%= form.select :site, Student.sites.keys.map {|k| [I18n.t("enums.site.#{k}"), k]}, include_blank: "選択して下さい" %></div>
-      </u
+      <div class="col-md-6 field"><%= form.select :site, Student.sites_i18n.invert.to_a %></div>
     </ul>
     <ul class="row">
       <div class="col-md-6 label"><%= form.label :school_year %></div>
-      <div class="col-md-6 field"><%= form.select :school_year, Student.school_years.keys.map {|k| [I18n.t("enums.school_year.#{k}"), k]}, include_blank: "選択して下さい" %></div>
+      <div class="col-md-6 field"><%= form.select :school_year, Student.school_years_i18n.invert.to_a %></div>
+    </ul>
     <ul class="row">
       <div class="col-md-6 label"><%= form.label :parent_name %></div>
       <div class="col-md-6 field"><%= form.text_field :parent_name %><div>

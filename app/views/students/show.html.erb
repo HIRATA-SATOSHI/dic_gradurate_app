@@ -1,11 +1,14 @@
+<%= form_with(model: @student, local: true) do |form| %>
 <br>
 <p id="notice"><%= notice %></p>
 
 <div class="container">  
 <table class="table">
   <ul class="row">
-    <div class="col-md-6 label"><strong>name:</strong></div>
+    <div class="col-md-6 label"><strong>name</strong></div>
     <div class="col-md-6 field"><%= @student.name %></div>
+
+
   </ul>
 
   <ul class="row">
@@ -61,7 +64,9 @@
 <table class="table">
 </div>
 
+
 <br>
 <%= link_to 'Edit', edit_student_path(@student) %>
 <br>
 <%= link_to 'To Student_index', students_path %>
+<% end %>
