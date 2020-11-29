@@ -21,7 +21,7 @@
     <%= f.radio_button :course_eq, 2 %>レベル3
     <%= f.radio_button :course_eq, 3 %>レベル4
     <%= f.radio_button :course_eq, 4 %>scholars
-    <%= f.radio_button :course_eq, 4 %>Liberal arts 
+    <%= f.radio_button :course_eq, 5 %>Liberal arts 
 <br>
     <%= f.label :enrollment_status %>
     <%= f.radio_button :enrollment_status_eq, '', {:checked => true} %>指定なし
@@ -38,11 +38,9 @@
 </div>
 <br>
 
-<%= form_with(scope: :delite_group, local: true ,url: {controller: 'students', action: 'destroy_all' } ,method: 'delete') do |f| %>
 <table class="table table-bordered table-hover">
   <thead>
     <tr>
-      <th> </th>
       <th><%= sort_link(@q, :id, "生徒ID") %></th>
       <th>生徒氏名</th>
       <th><%= sort_link(@q, :site, "通学校舎") %></th>
@@ -54,7 +52,6 @@
   <tbody>
     <% @student.each do |student| %>
       <tr>
-        <td><%= f.check_box "deletes[#{ student.id }]", :as => :boolean, checked:false %></td>
         <td><%= link_to student.id, student_path(student.id) %></td>
         <td><%= student.name %></td>
         <td><%= student.site_i18n %></td>
@@ -65,8 +62,7 @@
      <% end %>
   </tbody>
 </table>
-<%= f.submit "選択削除実行" %>
-<% end %>
+
 
 <nav aria-label= "Page navigation example"><%= paginate @student %></nav>
 

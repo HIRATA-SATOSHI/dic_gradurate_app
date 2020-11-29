@@ -51,12 +51,12 @@ class StudentsController < ApplicationController
     @student = Student.new(student_params)
   end
 
-  def destroy_all
-    checked_data = params[:deletes].keys # ここでcheckされたデータを受け取っています。
-    if @student.destroy_all(checked_data)
-      redirect_to students_path
-    end
-  end
+  # def destroy_all
+  #   checked_data = params[:deletes].keys # ここでcheckされたデータを受け取っています。
+  #   if @student.destroy_all(checked_data)
+  #     redirect_to students_path
+  #   end
+  # end
 
   private
   def set_student
