@@ -12,10 +12,10 @@ RSpec.describe '生徒管理機能', type: :system do
         it '作成した生徒が表示される' do
           visit new_student_path
           fill_in 'student_name', with: 'sample_student01'
-          select 'student_course', with: 'level_1'
-          select 'student_enrollment_status', with: 'yyes'
-          select 'student_site', with: 'jiyugaoka'
-          select 'student_school_year', with: 'fifth_grader'
+          select 'レベル1', from: 'student_course'
+          select '通塾中', from: 'student_enrollment_status'
+          select '自由が丘', from: 'student_site'
+          select '小5', from: 'student_school_year'
           fill_in 'student_parent_name', with: 'sample_parent01'
           fill_in 'student_phone_number', with: '0311112222'
           fill_in 'student_email_address', with: 'sample_parent01@test.com'
