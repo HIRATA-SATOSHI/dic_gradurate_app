@@ -21,12 +21,19 @@ RSpec.describe '生徒管理機能', type: :system do
           fill_in 'student_email_address', with: 'sample_parent01@test.com'
           fill_in 'student_live_address', with: '東京都目黒区'
           click_on "登録する"
+          expect(current_path).to eq confirm_students_path
         end
       end
     end
     describe '生徒一覧表示機能' do
       context '生徒一覧画面に遷移した場合' do
         it '作成済みの生徒一覧が表示される' do
+          visit students_path
+          expect(page).to have_content 'sample_student01'
+          expect(page).to have_content '自由が丘'
+          expect(page).to have_content 'レベル1'
+          expect(page).to have_content '通塾中'
+
         end
       end
     end
