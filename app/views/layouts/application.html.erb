@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GradurateApp</title>
+    <title>J PREP ZDM </title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <!-- コード追加 Bootstrap CSS読み込みコード-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   </head>
 
   <body>
+  <nav class="navbar" style="background-color:#4169e1;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <p class="navbar-brand">
+        <i class="fas fa-gem"> J PREP ZDM </i>
+        <br>
+        <!-- <i class="fas fa-user">がログイン</i> -->
+      </p>
+      
+    </div>
+  </div>
+</nav>
     <%= yield %>
   </body>
 </html>

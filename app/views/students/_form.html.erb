@@ -1,0 +1,64 @@
+<%= form_with(model: student, local: true ,url: confirm_students_path) do |form| %>
+  <% if student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+      <% student.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="container">  
+    <ul class="row">
+
+      <div class="col-md-6 label"><%= form.label :name %></div>
+      <div class="col-md-6 field"><%= form.text_field :name %></div>
+    </ul>
+    <ul class="row">
+      <div class="col-md-6 label"><%= form.label :course %></div>
+      <div class="col-md-6 field"><%= form.select :course, Student.courses_i18n.invert %></div>
+    </ul>
+    <ul class="row">
+      <div class="col-md-6 label"><%= form.label :enrollment_status %></div>
+      <div class="col-md-6 field"><%= form.select :enrollment_status, Student.enrollment_statuses_i18n.invert %></div>
+    </ul>
+    <ul class="row">
+      <div class="col-md-6 label"><%= form.label :site %></div>
+      <div class="col-md-6 field"><%= form.select :site, Student.sites_i18n.invert %></div>
+    </ul>
+    <ul class="row">
+      <div class="col-md-6 label"><%= form.label :school_year %></div>
+      <div class="col-md-6 field"><%= form.select :school_year, Student.school_years_i18n.invert %></div>
+    </ul>
+    <ul class="row">
+      <div class="col-md-6 label"><%= form.label :parent_name %></div>
+      <div class="col-md-6 field"><%= form.text_field :parent_name %><div>
+    </ul>
+    <ul class="row">
+      <div class="col-md-6 label"><%= form.label :phone_number %></div>
+      <div class="col-md-6 field"><%= form.telephone_field :phone_number,size:15,maxlength:20 %></div>
+    </ul>
+    <ul class="row">
+      <div class="col-md-6 label"><%= form.label :email_address %></div>
+      <div class="col-md-6 field"><%= form.email_field :email_address,size:25 ,maxlength:30 %></div>
+    </ul>
+    <ul class="row">
+      <div class="col-md-6 label"><%= form.label :live_address %></div>
+      <div class="col-md-6 field"><%= form.text_field :live_address %></div>
+    </ul>
+    <br>
+    <br>
+    <br>
+  
+  <div class="actions">
+    <%= form.submit  %>
+    <br>
+    <br>
+    <%= link_to '生徒検索一覧へ戻る', students_path %>
+  </div>
+
+  </div>
+<% end %>

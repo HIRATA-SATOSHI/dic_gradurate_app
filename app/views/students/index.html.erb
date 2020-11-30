@@ -1,0 +1,68 @@
+<%= search_form_for @q do |f| %>
+    <%= f.label :student, "生徒名検索" %>
+    <%= f.search_field :name_cont %>
+<br>
+    <%= f.label :id, "生徒ID検索" %>
+    <%= f.number_field :id_gteq %>〜
+    <%= f.number_field :id_lt %>
+<br>
+    <%= f.label :site %>
+    <%= f.radio_button :site_eq, '', {:checked => true} %>指定なし
+    <%= f.radio_button :site_eq, 0 %>自由が丘
+    <%= f.radio_button :site_eq, 1 %>渋谷
+    <%= f.radio_button :site_eq, 2 %>吉祥寺
+    <%= f.radio_button :site_eq, 3 %>四谷
+    <%= f.radio_button :site_eq, 4 %>酒田
+<br>
+    <%= f.label :course %>
+    <%= f.radio_button :course_eq, '', {:checked => true} %>指定なし
+    <%= f.radio_button :course_eq, 0 %>レベル1
+    <%= f.radio_button :course_eq, 1 %>レベル2
+    <%= f.radio_button :course_eq, 2 %>レベル3
+    <%= f.radio_button :course_eq, 3 %>レベル4
+    <%= f.radio_button :course_eq, 4 %>scholars
+    <%= f.radio_button :course_eq, 5 %>Liberal arts 
+<br>
+    <%= f.label :enrollment_status %>
+    <%= f.radio_button :enrollment_status_eq, '', {:checked => true} %>指定なし
+    <%= f.radio_button :enrollment_status_eq, 0 %>通塾中
+    <%= f.radio_button :enrollment_status_eq, 1 %>退塾
+    <%= f.radio_button :enrollment_status_eq, 2 %>休塾
+<br>
+    <%= f.submit "検索" %>
+<% end %>
+<br>
+<br>
+<div class= create>
+  <%= link_to '生徒新規作成', new_student_path %>
+</div>
+<br>
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th><%= sort_link(@q, :id, "生徒ID") %></th>
+      <th>生徒氏名</th>
+      <th>通学校舎</th>
+      <th>コース</th>
+      <th>在籍状況</th>
+      <th>削除</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @student.each do |student| %>
+      <tr>
+        <td><%= link_to student.id, student_path(student.id) %></td>
+        <td><%= student.name %></td>
+        <td><%= student.site_i18n %></td>
+        <td><%= student.course_i18n %></td>
+        <td><%= student.enrollment_status_i18n %></td>
+        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+     <% end %>
+  </tbody>
+</table>
+
+
+<nav aria-label= "Page navigation example"><%= paginate @student %></nav>
+
