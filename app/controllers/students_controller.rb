@@ -3,7 +3,7 @@ class StudentsController < ApplicationController
 
   def index
     @q = Student.ransack(params[:q])
-    @student = @q.result(district: true)
+    @student = @q.result(district: true).order(id: :asc)
     respond_to do |format|
       format.html { @student = @student.page(params[:page]) }
     end

@@ -33,10 +33,18 @@ RSpec.describe '生徒管理機能', type: :system do
           expect(page).to have_content '自由が丘'
           expect(page).to have_content 'レベル1'
           expect(page).to have_content '通塾中'
-
+        end
+      end
+      context '生徒一覧の生徒IDをクリックすると' do
+        it '降順の並びで表示される' do     
+          visit students_path
+          click_link '生徒ID' 
+          visit students_path(sort_expired: "true")
+          student_list = all('.student_list')
         end
       end
     end
+
     describe '生徒詳細表示機能' do
        context '任意の生徒詳細画面に遷移した場合' do
          it '該当生徒の内容が表示される' do
