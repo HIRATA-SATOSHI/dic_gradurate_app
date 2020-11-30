@@ -43,4 +43,29 @@ RSpec.describe '生徒管理機能', type: :system do
          end
        end
     end
+    describe '検索機能' do
+      before do
+      end
+
+      context 'あいまいな検索をかける' do
+        it '検索ワードを含むタスクで絞り込まれる' do
+          visit students_path
+          fill_in "q_name_cont", with: "03"
+          click_on "検索"
+          expect(page).to have_content 'sample_student03'
+          expect(page).not_to have_content 'example'
+        end
+      end
+
+      context '範囲検索をかける' do
+        it '生徒IDの範囲検索を行う'do
+          visit students_path
+          fill_in "q_id_gteq", with: "1"
+         fill_in "q_id_lt", with: "2"
+          click_on "検索"
+          expect(page).to have_content '1'
+          expect(page).not_to have_content '0'         
+        end
+      end
+    end
   end
