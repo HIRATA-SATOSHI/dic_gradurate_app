@@ -67,5 +67,34 @@ RSpec.describe '生徒管理機能', type: :system do
           expect(page).not_to have_content '0'         
         end
       end
+
+      context '通塾校舎をラジオボタンで選択' do
+        it '通塾校舎毎に生徒を検索' do
+          visit students_path
+          choose 'q_site_eq_0'
+          click_on "検索"
+          expect(page).to have_content '自由が丘'
+          expect(page).to have_no_content 'gege'            
+        end
+      end
+        context '通塾コースをラジオボタンで選択' do
+          it '通塾コース毎に生徒を検索' do
+            visit students_path
+            choose 'q_course_eq_0'
+            click_on "検索"
+            expect(page).to have_content 'レベル1'
+            expect(page).to have_no_content 'hoge'           
+          end
+        end
+        context '在籍状況をラジオボタンで選択' do
+            it '在籍状況毎に生徒を検索' do
+              visit students_path
+              choose 'q_enrollment_status_eq_0'
+              click_on "検索"
+              expect(page).to have_content '通塾中'
+              expect(page).to have_no_content '秘密のパスワード'
+                          
+            end
+          end
     end
   end
