@@ -25,6 +25,13 @@
     </div>
   </div>
 </nav>
+<% if staff_signed_in? %>
+<%= link_to "生徒検索一覧", students_path %>
+<%= link_to "ログアウト", destroy_staff_session_path, method: :delete %>
+<% else %>
+<%= link_to "システム利用スタッフ新規登録", new_staff_registration_path %>
+<%= link_to "ログイン", new_staff_session_path %>
+<% end %>
     <%= yield %>
   </body>
 </html>
