@@ -29,9 +29,17 @@
 <%= link_to "生徒検索一覧", students_path %>
 <%= link_to "ログアウト", destroy_staff_session_path, method: :delete %>
 <% else %>
-<%= link_to "システム利用スタッフ新規登録", new_staff_registration_path %>
+<%= link_to "スタッフ新規作成", new_staff_registration_path %>
 <%= link_to "ログイン", new_staff_session_path %>
 <% end %>
+
+<% if notice %>
+<p class="alert alert-notice"><%= notice %></p>
+<% end %>
+<% if alert %>
+<p class="alert alert-error"><%= alert %></p>
+<% end %>
+
     <%= yield %>
   </body>
 </html>
