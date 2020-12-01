@@ -18,13 +18,14 @@
     <div class="navbar-header">
       <p class="navbar-brand">
         <i class="fas fa-gem"> J PREP ZDM </i>
-        <br>
-        <!-- <i class="fas fa-user">がログイン</i> -->
+        <!-- <i class="fas fa-user">がログイン</i> --> 
+    
       </p>
       
     </div>
   </div>
 </nav>
+
 <% if staff_signed_in? %>
 <%= link_to "生徒検索一覧", students_path %>
 <%= link_to "ログアウト", destroy_staff_session_path, method: :delete %>
