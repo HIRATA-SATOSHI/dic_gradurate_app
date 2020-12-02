@@ -1,12 +1,59 @@
 class Admin::StaffsController < ApplicationController
-  before_action :admin_staff
+  before_action :set_staff, only: [:show, :edit, :destroy, :update]
+  before_action :require_admin
 
   def index
     @staffs = Staff.all.order("created_at DESC")
   end
+
+  def new
+    @staff = Staff.new
+  end
+
+  def create
+    @staff = Staff.new(staff_params)
+    if @staff.save
+      redirect_to admin_staffs_path, notice: "ユーザー「#{@staff.name}」を登録しました"
+    else
+      render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @staff.update(staff_params)
+      flash[:notice] =  "スタッフ #{@staff.name} 更新しました"
+      redirect_to admin_staffs_path
+    else
+      render :edit, notice: "管理者がいなくなりますので #{@staff.name} の管理者権限を外しての更新はできません"
+    end
+  end
+
+  def show
+  end
+
+  def destroy
+    if @staff.destroy
+      redirect_to admin_staffs_path, notice: "ユーザー #{@staff.name} を削除しました"
+    else
+      redirect_to admin_staffs_path, notice: "管理者がいなくなりますので #{@staff.name} を削除できません"
+    end
+  end
   
   private
-  def admin_staff
-    redirect_to(root_path) unless current_staff.admin?
-  end 
+  def require_admin
+    unless current_staff.admin?
+        redirect_to students_path, notice: "あなたは管理者ではありません"
+    end
+  end
+
+  def set_staff
+    @staff = Staff.find(params[:id])
+  end
+
+  def staff_params
+    params.require(:staff).permit(:name, :email, :password, :password_confirmation, :department, :admin )
+  end
 end
