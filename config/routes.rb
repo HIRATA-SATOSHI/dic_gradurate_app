@@ -12,5 +12,11 @@ Rails.application.routes.draw do
   devise_for :staffs, :controllers => {
     sessions: 'staffs/sessions'
   }
+
+  namespace :admin do
+    resources :staffs
+  end
+  
+
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end
