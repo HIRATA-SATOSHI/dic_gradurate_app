@@ -14,3 +14,6 @@
 <% end %>
 
 <%= render 'form', staff: @staff %>
+<% if current_staff.admin? %>
+  <%= link_to 'スタッフ一覧', admin_staffs_path %>
+<% end %>

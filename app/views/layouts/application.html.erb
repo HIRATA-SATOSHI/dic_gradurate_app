@@ -19,20 +19,15 @@
       <p class="navbar-brand">
         <i class="fas fa-gem"> J PREP ZDM </i>
         <!-- <i class="fas fa-user">がログイン</i> --> 
-        
       </p>
-      
+    </div>
+    <div>  
+      <% if staff_signed_in? %>
+        <button type="button" class="btn btn-danger btn-sm"><%= link_to "ログアウト", destroy_staff_session_path, method: :delete %></button>
+      <% end %> 
     </div>
   </div>
 </nav>
-
-<% if staff_signed_in? %>
-<%= link_to "生徒検索一覧", students_path %>
-<%= link_to "ログアウト", destroy_staff_session_path, method: :delete %>
-<% else %>
-<%= link_to "スタッフ新規作成", new_staff_registration_path %>
-<%= link_to "ログイン", new_staff_session_path %>
-<% end %>
 
 <% if notice %>
 <p class="alert alert-notice"><%= notice %></p>
@@ -41,6 +36,6 @@
 <p class="alert alert-error"><%= alert %></p>
 <% end %>
 
-    <%= yield %>
-  </body>
+  <%= yield %>
+</body>
 </html>

@@ -1,14 +1,14 @@
 <h4>スタッフ登録一覧</h4>
-
-<table class="table">
 <br>
+<%= link_to '新規スタッフ作成', new_admin_staff_path %>
+<button type="button" class="btn btn-info btn-sm"><%= link_to '生徒検索一覧へ', students_path %></button>
+<table class="table">
   <thead>
     <tr class="table-info">
-      <th><%= t('staff.id') %></th>
-      <th><%= t('staff.name') %></th>
-      <th><%= t('staff.email') %></th>
-      <th><%= t('staff.department') %></th>      
-      <th><%= t('staff.admin') %></th>
+      <th>スタッフ氏名</th>
+      <th>メールアドレス</th>
+      <th>所属部署</th>      
+      <th>管理者権限</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,18 +16,14 @@
     <tbody>
       <% @staffs.each do |staff| %>
         <tr>
-          <td><%= staff.id %></td>
-          <td><%= staff.name %></td>
+          <td><%= link_to staff.name, admin_staff_path(staff.id) %></td>
           <td><%= staff.email %></td>
           <td><%= staff.department %></td>         
           <td><%= staff.admin %></td>
-          <td><%= link_to 'Show', admin_staff_path(staff) %></td>
-          <td><%= link_to 'Edit', edit_admin_staff_path(staff) %></td>
-          <td><%= link_to 'Delete', admin_staff_path(staff), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to '削除', admin_staff_path(staff), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>  
 </table>
 <br>
-<br>
-<button type="button" class="btn btn-success btn-sm"><%= link_to '新規スタッフ作成', new_admin_staff_path %></button>
+
