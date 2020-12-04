@@ -14,7 +14,7 @@
   </thead>
 
     <tbody>
-      <% @staffs.each do |staff| %>
+      <% @staff.each do |staff| %>
         <tr>
           <td><%= link_to staff.name, admin_staff_path(staff.id) %></td>
           <td><%= staff.email %></td>
@@ -26,4 +26,4 @@
     </tbody>  
 </table>
 <br>
-
+<nav aria-label= "Page navigation example"><%= paginate @staff %></nav>

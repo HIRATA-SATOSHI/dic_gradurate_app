@@ -3,7 +3,8 @@ class Admin::StaffsController < ApplicationController
   before_action :require_admin
 
   def index
-    @staffs = Staff.all.order("created_at DESC")
+    @staff = Staff.all.order("created_at DESC")
+    @staff = @staff.page(params[:page]) 
   end
 
   def new
