@@ -1,0 +1,30 @@
+<%= form_with(model: [:admin, @staff], local: true) do |f| %>
+    <br>
+    <p id="notice"><%= notice %></p>
+    
+    <div class="container">  
+    <table class="table">
+      <ul class="row">
+        <div class="col-md-6 label"><strong>登録スタッフ名</strong></div>
+        <div class="col-md-6 field"><%= @staff.name %></div>
+      </ul>
+    
+      <ul class="row">
+       <div class="col-md-6 label"><strong>登録メール</strong></div>
+       <div class="col-md-6 field"><%= @staff.email %></div>
+      </ul>
+    
+      <ul class="row">
+       <div class="col-md-6 label"><strong>所属部署</strong></div>
+       <div class="col-md-6 field"><%= @staff.department%></div></div>
+      </ul>
+    
+      <ul class="row">
+        <div class="col-md-6 label"><strong>管理者権限</strong></div>
+        <div class="col-md-6 field"><%= @staff.admin %></div>
+      </ul>
+    </table>
+    </div>
+<% end %>
+
+<%= link_to '編集画面に行く', edit_admin_staff_path %>

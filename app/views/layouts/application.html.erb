@@ -18,13 +18,24 @@
     <div class="navbar-header">
       <p class="navbar-brand">
         <i class="fas fa-gem"> J PREP ZDM </i>
-        <br>
-        <!-- <i class="fas fa-user">がログイン</i> -->
+        <!-- <i class="fas fa-user">がログイン</i> --> 
       </p>
-      
+    </div>
+    <div>  
+      <% if staff_signed_in? %>
+        <button type="button" class="btn btn-danger btn-sm"><%= link_to "ログアウト", destroy_staff_session_path, method: :delete %></button>
+      <% end %> 
     </div>
   </div>
 </nav>
-    <%= yield %>
-  </body>
+
+<% if notice %>
+<p class="alert alert-notice"><%= notice %></p>
+<% end %>
+<% if alert %>
+<p class="alert alert-error"><%= alert %></p>
+<% end %>
+
+  <%= yield %>
+</body>
 </html>

@@ -1,0 +1,19 @@
+<h4>管理者 スタッフ情報編集</h4>
+
+<br>
+
+<% if @staff.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@staff.errors.count, "error") %> prohibited this <%= @staff.name %> from being saved:</h2>
+    <ul>
+    <% @staff.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= render 'form', staff: @staff %>
+<br>
+<%= link_to '戻る', admin_staffs_path %>
+

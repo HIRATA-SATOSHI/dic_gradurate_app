@@ -51,6 +51,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry-rails'
+  gem 'letter_opener_web'
 end
 
 group :test do
@@ -66,4 +67,8 @@ gem 'ransack-enum', '~> 0.3'
 gem 'rails-i18n'
 gem 'enum_help'
 gem 'kaminari', '~> 0.17.0'
-gem 'kaminari-bootstrap', '~> 3.0.1' 
+gem 'kaminari-bootstrap', '~> 3.0.1'
+gem 'devise'
+gem 'devise-i18n'
+gem 'faker'
+

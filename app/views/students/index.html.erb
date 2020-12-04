@@ -1,3 +1,8 @@
+<%= link_to '生徒新規作成', new_student_path %>
+<% if current_staff.admin? %>
+  <%= link_to 'スタッフ一覧', admin_staffs_path %>
+<% end %>
+<br>
 <%= search_form_for @q do |f| %>
     <%= f.label :student, "生徒名検索" %>
     <%= f.search_field :name_cont %>
@@ -33,11 +38,6 @@
 <% end %>
 <br>
 <br>
-<div class= create>
-  <%= link_to '生徒新規作成', new_student_path %>
-</div>
-<br>
-
 <table class="table table-bordered table-hover">
   <thead>
     <tr>
@@ -46,7 +46,9 @@
       <th>通学校舎</th>
       <th>コース</th>
       <th>在籍状況</th>
-      <th>削除</th>
+      <% if current_staff.admin? %>
+        <th>削除</th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
@@ -57,7 +59,9 @@
         <td><%= student.site_i18n %></td>
         <td><%= student.course_i18n %></td>
         <td><%= student.enrollment_status_i18n %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_staff.admin? %>
+          <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
      <% end %>
   </tbody>

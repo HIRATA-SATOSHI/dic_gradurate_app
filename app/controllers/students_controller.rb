@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_staff!
 
   def index
     @q = Student.ransack(params[:q])
@@ -21,6 +22,7 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.new(student_params)
+
     respond_to do |format|
       if @student.save
         format.html { redirect_to @student, notice: 'Student was successfully created.' }
@@ -49,6 +51,7 @@ class StudentsController < ApplicationController
 
   def confirm
     @student = Student.new(student_params)
+    render :new if @student.invalid?
   end
 
   # def destroy_all
