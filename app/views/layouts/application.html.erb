@@ -18,7 +18,9 @@
     <div class="navbar-header">
       <p class="navbar-brand">
         <i class="fas fa-gem"> J PREP ZDM </i>
-        <!-- <i class="fas fa-user">がログイン</i> --> 
+        <% if staff_signed_in? %>
+          <i class="fas fa-user"><%= current_staff.name %>がログイン</i>
+        <% end %>
       </p>
     </div>
     <div>  
