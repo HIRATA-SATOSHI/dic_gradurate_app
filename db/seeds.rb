@@ -5,7 +5,7 @@ Staff.create!( email: "admin_admin@jprep.jp",
   department: "管理部",
   admin: true)
 
-  80.times do |n|
+  150.times do |n|
     name = Faker::JapaneseMedia::DragonBall.character
     email = Faker::Internet.email
     password = "password"
@@ -18,16 +18,16 @@ Staff.create!( email: "admin_admin@jprep.jp",
                 )
   end
 
-  250.times do |n|
+  1200.times do |n|
     name = Faker::JapaneseMedia::Doraemon.character
     course = ["0","1","2","3","4","5"]
     enrollment_status = ["0","1","2"]
     site = ["0","1","2","3","4"]
     school_year = ["0","1","2","3","4","5","6","7"]
     parent_name = Faker::JapaneseMedia::Doraemon.character
-    phone_number = Faker::PhoneNumber
+    phone_number = Faker::PhoneNumber.phone_number
     email_address = Faker::Internet.email
-    live_address =  Faker::Address
+    live_address =  Faker::Address.full_address
     Student.create!(name: name,
                  course: rand(0..5), 
                  enrollment_status: rand(0..2),
