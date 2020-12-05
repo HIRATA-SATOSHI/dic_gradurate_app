@@ -3,13 +3,15 @@
   <%= link_to 'スタッフ一覧', admin_staffs_path %>
 <% end %>
 <br>
+<%= link_to '休塾・退塾申請生徒一覧', forms_path %>
+<br>
 <%= search_form_for @q do |f| %>
     <%= f.label :student, "生徒名検索" %>
     <%= f.search_field :name_cont %>
 <br>
-    <%= f.label :id, "生徒ID検索" %>
-    <%= f.number_field :id_gteq %>〜
-    <%= f.number_field :id_lt %>
+    <%= f.label :id, "生徒番号検索" %>
+    <%= f.number_field :number_gteq %>〜
+    <%= f.number_field :number_lt %>
 <br>
     <%= f.label :site %>
     <%= f.radio_button :site_eq, '', {:checked => true} %>指定なし
@@ -41,7 +43,7 @@
 <table class="table table-bordered table-hover">
   <thead>
     <tr>
-      <th><%= sort_link(@q, :id, "生徒ID") %></th>
+      <th><%= sort_link(@q, :number, "生徒番号") %></th>
       <th>生徒氏名</th>
       <th>通学校舎</th>
       <th>コース</th>
@@ -54,7 +56,7 @@
   <tbody>
     <% @student.each do |student| %>
       <tr>
-        <td><%= link_to student.id, student_path(student.id) %></td>
+        <td><%= link_to student.number, student_path(student) %></td>
         <td><%= student.name %></td>
         <td><%= student.site_i18n %></td>
         <td><%= student.course_i18n %></td>

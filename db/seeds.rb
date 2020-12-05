@@ -19,6 +19,8 @@ Staff.create!( email: "admin_admin@jprep.jp",
   end
 
   1200.times do |n|
+    number =  n + 1
+    puts  "nubmber= #{number}"
     name = Faker::JapaneseMedia::Doraemon.character
     course = ["0","1","2","3","4","5"]
     enrollment_status = ["0","1","2"]
@@ -28,7 +30,8 @@ Staff.create!( email: "admin_admin@jprep.jp",
     phone_number = Faker::PhoneNumber.phone_number
     email_address = Faker::Internet.email
     live_address =  Faker::Address.full_address
-    Student.create!(name: name,
+    Student.create!(number: number,
+                 name: name,
                  course: rand(0..5), 
                  enrollment_status: rand(0..2),
                  site: rand(0..4), 

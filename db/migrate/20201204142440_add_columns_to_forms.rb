@@ -1,7 +1,7 @@
 class AddColumnsToForms < ActiveRecord::Migration[5.2]
   def change
     create_table :forms do |t|
-      t.string :student_id, null: false
+      t.string :number, null: false
       t.string :name, null: false
       t.date :application_date, null: false
       t.integer :classification, null: false

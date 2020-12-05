@@ -1,0 +1,71 @@
+<%= form_with(model: @form, local: true) do |form| %>
+    <% if @form.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@form.errors.count, "error") %> prohibited this form from being saved:</h2>
+  
+        <ul>
+        <% @form.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="field">
+      <%= form.label :number  %> 
+      <%= form.text_field :number %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div class="field">
+    <%= form.label :application_date %>
+    <%= form.date_field :application_date %>
+  </div>
+
+    <div class="field">
+      <%= form.label :classification %>
+      <%= form.select :classification, Form.classifications_i18n.invert %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :month %>
+      <%= form.date_select :month, {:discard_day => true} %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :f_month %>
+      <%= form.date_select :f_month, {:discard_day => true} %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :reason %>
+      <%= form.select :reason, Form.reasons_i18n.invert %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :comment %>
+      <%= form.text_area :comment %>
+    </div>
+  
+    <% if action_name == 'edit' %>
+      <div class="field">
+        <%= form.label :processed_staff %>
+        <%= form.text_field :processed_staff %>
+      </div>
+    
+    
+      <div class="field">
+        <%= form.label :cancel %>
+        <%= form.check_box :cancel, {}, "yes", "" %>
+      </div>
+    <% end %>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+  
