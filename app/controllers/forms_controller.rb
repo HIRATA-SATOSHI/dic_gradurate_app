@@ -18,8 +18,8 @@ class FormsController < ApplicationController
   end
 
   def create
-
     @form = Form.new(form_params)
+    @form.staff_id = current_staff.id
 
     respond_to do |format|
       if @form.save

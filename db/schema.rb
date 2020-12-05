@@ -28,8 +28,10 @@ ActiveRecord::Schema.define(version: 2020_12_05_150131) do
     t.boolean "cancel", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "staffs_id"
-    t.index ["staffs_id"], name: "index_forms_on_staffs_id"
+    t.bigint "staff_id"
+    t.bigint "student_id"
+    t.index ["staff_id"], name: "index_forms_on_staff_id"
+    t.index ["student_id"], name: "index_forms_on_student_id"
   end
 
   create_table "staffs", force: :cascade do |t|
@@ -62,5 +64,6 @@ ActiveRecord::Schema.define(version: 2020_12_05_150131) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "forms", "staffs", column: "staffs_id"
+  add_foreign_key "forms", "staffs"
+  add_foreign_key "forms", "students"
 end

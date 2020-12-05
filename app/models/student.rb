@@ -22,4 +22,6 @@ class Student < ApplicationRecord
     eleventh_grader: 6,
     twelfth_grader: 7
   }
+
+  has_one :form
 end

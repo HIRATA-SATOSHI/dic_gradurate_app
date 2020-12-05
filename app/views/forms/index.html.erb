@@ -40,7 +40,7 @@
       <th>提出日時</th>
       <th>届申請日</th>      
       <th>申請区分</th>
-      <th>生徒ID</th>
+      <th>生徒番号</th>
       <th>休退塾開始月</th>
       <th>復塾月</th>
       <th>申請処理者</th>
@@ -54,7 +54,7 @@
         <td><%= form.created_at %></td>
         <td><%= form.application_date %></td>
         <td><%= form.classification_i18n %></td>
-        <td><%= form.student_id %></td>
+        <td><%= link_to student.number, student_path(student) %></td>
         <td><%= form.month %></td>
         <td><%= form.f_month %></td>
         <td><%= form.processed_staff %></td>
