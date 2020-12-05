@@ -39,7 +39,10 @@
     <%= f.submit "検索" %>
 <% end %>
 <br>
+ページ:<%= @student.current_page %> / <%= @student.num_pages %>
 <br>
+<%= @student.total_count %>件中<%= @student.offset_value %>
+〜<%= @student.offset_value + @student.length %>件を表示しています。
 <table class="table table-bordered table-hover">
   <thead>
     <tr>
