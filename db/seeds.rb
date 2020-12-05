@@ -19,7 +19,7 @@ Staff.create!( email: "admin_admin@jprep.jp",
   end
 
   1200.times do |n|
-    number =  n + 1
+    number =  n + 10001
     puts  "nubmber= #{number}"
     name = Faker::JapaneseMedia::Doraemon.character
     course = ["0","1","2","3","4","5"]

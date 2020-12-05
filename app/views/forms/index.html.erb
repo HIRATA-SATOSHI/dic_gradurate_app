@@ -7,9 +7,9 @@
     <%= f.label :form, "生徒名検索" %>
     <%= f.search_field :name_cont %>
 <br>
-    <%= f.label :id, "生徒ID検索" %>
-    <%= f.number_field :id_gteq %>〜
-    <%= f.number_field :id_lt %>
+    <%= f.label :id, "生徒番号検索" %>
+    <%= f.number_field :number_gteq %>〜
+    <%= f.number_field :number_lt %>
 <br>
     <%= f.label :classification %>
     <%= f.radio_button :classification_eq, '', {:checked => true} %>指定なし
