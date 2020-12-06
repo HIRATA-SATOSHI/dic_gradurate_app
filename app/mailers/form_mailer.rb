@@ -8,6 +8,6 @@ class FormMailer < ApplicationMailer
   def send_when_push(student)
     @student = student
     mail to:  student.email_address,
-         subject: '申請のあった休退塾をお送りします。'
+         subject: '申請のあった休退塾届をお送りします。'
   end
 end

@@ -1,5 +1,6 @@
 <h3>こちらの生徒情報を登録しますか？</h3>
 <%= form_with(model: @student, local: true) do |form| %>
+  <%= form.hidden_field :number %>
   <%= form.hidden_field :name %>
   <%= form.hidden_field :course %>
   <%= form.hidden_field :enrollment_status %>
@@ -9,6 +10,8 @@
   <%= form.hidden_field :phone_number %>
   <%= form.hidden_field :email_address %>
   <%= form.hidden_field :live_address %>
+  
+  <p>生徒番号:<%= @student.number %></p>
   <p>生徒氏名:<%= @student.name %></p>
   <p>通塾コース:<%= @student.course_i18n %></p>
   <p>在籍状況:<%= @student.enrollment_status_i18n %></p>

@@ -13,7 +13,10 @@
 
   <div class="container">  
     <ul class="row">
-
+      <div class="col-md-6 label"><%= form.label :number %></div>
+      <div class="col-md-6 field"><%= form.number_field :number %></div>
+    </ul>
+    <ul class="row">
       <div class="col-md-6 label"><%= form.label :name %></div>
       <div class="col-md-6 field"><%= form.text_field :name %></div>
     </ul>
