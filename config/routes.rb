@@ -18,6 +18,6 @@ Rails.application.routes.draw do
     resources :staffs
   end
   
-
+  post 'mailer/students', controller: 'mailer/students', action: 'send_form'
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end
