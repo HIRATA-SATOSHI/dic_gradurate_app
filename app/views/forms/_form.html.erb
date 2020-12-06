@@ -63,8 +63,16 @@
       </div>
     <% end %>
 
+    <% if action_name == 'edit' %>
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    <% end %>
+
+    <% if action_name == 'new' %>
     <div class="actions">
-      <%= form.submit %>
+      <%= form.submit "送信する" %>
     </div>
+  <% end %>
   <% end %>
   

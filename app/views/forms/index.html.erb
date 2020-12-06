@@ -44,6 +44,7 @@
       <th>休退塾開始月</th>
       <th>復塾月</th>
       <th>申請処理者</th>
+      <th>更新日時</th>
       <th>キャンセル</th>
     </tr>
   </thead>
@@ -54,10 +55,11 @@
         <td><%= form.created_at %></td>
         <td><%= form.application_date %></td>
         <td><%= form.classification_i18n %></td>
-        <td><%= link_to student.number, student_path(student) %></td>
+        <td><%= form.number %></td>
         <td><%= form.month %></td>
         <td><%= form.f_month %></td>
-        <td><%= form.processed_staff %></td>
+        <td><%= current_staff.name %></td>
+        <td><%= form.updated_at %></td>
         <td><%= form.cancel %></td>
       </tr>
     <% end %>
