@@ -49,7 +49,7 @@ class FormsController < ApplicationController
   end
 
   def confirm
-    binding.pry
+    
     @form = Form.new(form_params)
     render :new if @form.invalid?
   end 
