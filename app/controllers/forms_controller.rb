@@ -20,12 +20,13 @@ class FormsController < ApplicationController
   def create
     @form = Form.new(form_params)
     @form.staff_id = current_staff.id
-
-    respond_to do |format|
-      if @form.save
-        format.html { redirect_to @form, notice: 'Form was successfully created.' }
+    if params[:back]
+      render :new if @form.invalid?      
+    else
+      if @forms.save
+        redirect_to forms_path, notice: "休退塾申請を提出しました！"
       else
-        format.html { render :new }
+        render :new
       end
     end
   end
@@ -47,13 +48,20 @@ class FormsController < ApplicationController
     end
   end
 
+  def confirm
+    binding.pry
+    @form = Form.new(form_params)
+    render :new if @form.invalid?
+  end 
+
+  
   private
   def set_form
     @form = Form.find(params[:id])
   end
 
   def form_params
-    params.require(:form).permit(:number, :name, :course, :application_date, :classification, :month, :f_month, :reason, :comment, :processed_staff, :cancel)
+    params.require(:form).permit(:number, :name, :application_date, :classification, :month, :f_month, :reason, :comment, :processed_staff, :cancel)
   end
 
 end

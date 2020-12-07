@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :forms
+  resources :forms do
+    collection do
+      post :confirm
+    end
+  end
   # devise_for :staffs
   resources :students do
     collection do
