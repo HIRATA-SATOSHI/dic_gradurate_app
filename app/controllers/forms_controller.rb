@@ -18,6 +18,7 @@ class FormsController < ApplicationController
   end
 
   def create
+  
     @form = Form.new(form_params)
     @form.staff_id = current_staff.id
     if params[:back]
@@ -48,8 +49,7 @@ class FormsController < ApplicationController
     end
   end
 
-  def confirm
-    
+  def confirms 
     @form = Form.new(form_params)
     render :new if @form.invalid?
   end 
