@@ -9,7 +9,7 @@ class AddColumnsToForms < ActiveRecord::Migration[5.2]
       t.date :f_month, null: false
       t.integer :reason, null:false
       t.text :comment
-      t.text :processed_staff
+      t.integer :status
       t.boolean :cancel, default: false
 
       t.timestamps      

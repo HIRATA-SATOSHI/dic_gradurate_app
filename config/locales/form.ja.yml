@@ -14,7 +14,7 @@ ja:
         reason: 理由
         comment: 備考
         cancel: キャンセル
-        processed_staff: 処理対応スタッフ
+        status: ステータス
         email_address: メールアドレス
      
   enums:
@@ -28,3 +28,7 @@ ja:
         entance_exam: 受験準備
         study_abroad: 留学
         others: その他
+      status:
+        not_yet: 未着手
+        in_progress: 対応中
+        completed: 完了

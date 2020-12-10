@@ -59,7 +59,7 @@ class FormsController < ApplicationController
   end
 
   def form_params
-    params.require(:form).permit(:number, :name, :application_date, :classification, :month, :f_month, :reason, :comment, :processed_staff, :cancel)
+    params.require(:form).permit(:number, :name, :application_date, :classification, :month, :f_month, :reason, :comment, :status, :cancel)
   end
 
 end

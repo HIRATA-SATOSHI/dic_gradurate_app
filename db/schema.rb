@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_12_04_142440) do
     t.date "f_month", null: false
     t.integer "reason", null: false
     t.text "comment"
-    t.text "processed_staff"
+    t.integer "status"
     t.boolean "cancel", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
