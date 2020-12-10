@@ -18,13 +18,11 @@ class FormsController < ApplicationController
   end
 
   def create
-  
     @form = Form.new(form_params)
-    @form.staff_id = current_staff.id
     if params[:back]
       render :new if @form.invalid?      
     else
-      if @forms.save
+      if @form.save
         redirect_to forms_path, notice: "休退塾申請を提出しました！"
       else
         render :new
@@ -49,7 +47,7 @@ class FormsController < ApplicationController
     end
   end
 
-  def confirms 
+  def confirm
     @form = Form.new(form_params)
     render :new if @form.invalid?
   end 
