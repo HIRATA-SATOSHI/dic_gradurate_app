@@ -10,8 +10,9 @@
     <%= f.search_field :name_cont %>
 <br>
     <%= f.label :id, "生徒番号検索" %>
-    <%= f.number_field :number_gteq %>〜
-    <%= f.number_field :number_lteq %>
+    <%= f.number_field :number_gteq, min: 10000, max: 99999 %>〜
+    <%= f.number_field :number_lteq, min: 10000, max: 99999 %>
+    
 <br>
     <%= f.label :site %>
     <%= f.radio_button :site_eq, '', {:checked => true} %>指定なし
