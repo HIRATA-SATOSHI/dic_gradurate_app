@@ -8,8 +8,8 @@
     <%= f.search_field :name_cont %>
 <br>
     <%= f.label :id, "生徒番号検索" %>
-    <%= f.number_field :number_gteq %>〜
-    <%= f.number_field :number_lt %>
+    <%= f.number_field :number_gteq, min: 10000, max: 99999 %>〜
+    <%= f.number_field :number_lteq, min: 10000, max: 99999  %>
 <br>
     <%= f.label :classification %>
     <%= f.radio_button :classification_eq, '', {:checked => true} %>指定なし
@@ -36,7 +36,7 @@
 <table class="table table-bordered table-hover">
   <thead>
     <tr>
-      <th>フォームID</th>
+      <th><%= sort_link(@q, :id, "フォームID") %></th>
       <th>提出日時</th>
       <th>届申請日</th>      
       <th>申請区分</th>
@@ -45,8 +45,8 @@
       <th>休退塾開始月</th>
       <th>復塾月</th>
       <th>更新日時</th>
-      <th>対応ステータス</th>
-      <th>キャンセル</th>
+      <th><%= sort_link(@q, :status, "対応ステータス") %></th>
+      <th><%= sort_link(@q, :cancel, "キャンセル") %></th>
     </tr>
   </thead>
   <tbody>
