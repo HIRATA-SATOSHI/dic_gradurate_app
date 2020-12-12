@@ -5,6 +5,13 @@ Staff.create!( email: "admin_admin@jprep.jp",
   department: "管理部",
   admin: true)
 
+  Staff.create!( email: "staff@jprep.jp",
+  password: "staffstaff#1",
+  password_confirmation: "staffstaff#1",
+  name: "スタッフ1",
+  department: "酒田サポートデスク",
+  admin: false)
+
   150.times do |n|
     name = Faker::JapaneseMedia::DragonBall.character
     email = Faker::Internet.email
