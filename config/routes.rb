@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :forms do
     collection do
       post :confirm
+      get :done
     end
   end
   # devise_for :staffs

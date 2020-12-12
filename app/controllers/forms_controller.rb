@@ -1,5 +1,5 @@
 class FormsController < ApplicationController
-  before_action :set_form, only: [:show, :edit, :update, :destroy]
+  before_action :set_form, only: [:show, :edit, :update, :destroy ]
 
   def index
     @q = Form.ransack(params[:q])
@@ -23,7 +23,7 @@ class FormsController < ApplicationController
       render :new if @form.invalid?      
     else
       if @form.save
-        redirect_to forms_path, notice: "休退塾申請を提出しました！"
+        redirect_to done_forms_path
       else
         render :new
       end
@@ -50,7 +50,10 @@ class FormsController < ApplicationController
   def confirm
     @form = Form.new(form_params)
     render :new if @form.invalid?
-  end 
+  end
+
+  def done
+  end
 
   
   private
