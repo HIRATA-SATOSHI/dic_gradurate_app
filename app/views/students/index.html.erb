@@ -11,7 +11,7 @@
 <br>
     <%= f.label :id, "生徒番号検索" %>
     <%= f.number_field :number_gteq %>〜
-    <%= f.number_field :number_lt %>
+    <%= f.number_field :number_lteq %>
 <br>
     <%= f.label :site %>
     <%= f.radio_button :site_eq, '', {:checked => true} %>指定なし
