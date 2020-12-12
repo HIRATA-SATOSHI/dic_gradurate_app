@@ -23,5 +23,5 @@ Rails.application.routes.draw do
   end
   
   post 'mailer/students', controller: 'mailer/students', action: 'send_form'
-  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+  mount LetterOpenerWeb::Engine, at: "/letter_opener"
 end
