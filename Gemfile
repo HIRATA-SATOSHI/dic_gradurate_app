@@ -73,4 +73,5 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'faker'
 gem 'letter_opener_web'
+gem 'letter_opener'
 
