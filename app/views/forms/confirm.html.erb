@@ -1,5 +1,5 @@
 <h3>こちらの申請情報を送信しますか？</h3>
-<%= form_with(model: @form, local: true) do |form| %>
+<%= form_with(model: @form, url: forms_path, local: true) do |form| %>
   <%= form.hidden_field :number %>
   <%= form.hidden_field :name %>
   <%= form.hidden_field :application_date %>

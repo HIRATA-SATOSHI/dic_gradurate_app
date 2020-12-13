@@ -20,7 +20,7 @@ class FormsController < ApplicationController
   def create
     @form = Form.new(form_params)
     if params[:back]
-      render :new if @form.invalid?      
+      render :new    
     else
       if @form.save
         redirect_to done_forms_path
