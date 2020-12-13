@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :forms do
     collection do
       post :confirm
+      post :back
       get :done
     end
   end

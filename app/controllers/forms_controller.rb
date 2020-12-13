@@ -52,6 +52,11 @@ class FormsController < ApplicationController
     render :new if @form.invalid?
   end
 
+  def back
+    @form = Form.new(form_params)
+		render :new
+  end
+  
   def done
   end
 

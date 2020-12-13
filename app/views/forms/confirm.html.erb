@@ -1,24 +1,34 @@
 <h3>こちらの申請情報を送信しますか？</h3>
-<%= form_with(model: @form, url: forms_path, local: true) do |form| %>
-  <%= form.hidden_field :number %>
-  <%= form.hidden_field :name %>
-  <%= form.hidden_field :application_date %>
-  <%= form.hidden_field :classification %>
-  <%= form.hidden_field :month %>
-  <%= form.hidden_field :f_month%>
-  <%= form.hidden_field :reason %>
-  <%= form.hidden_field :comment %>
 
-  
   <p>生徒番号:<%= @form.number %></p>
   <p>生徒氏名:<%= @form.name %></p>
   <p>申請年月日:<%= @form.application_date %></p>
   <p>申請区分:<%= @form.classification_i18n %></p>
-  <p>休塾・通塾開始月:<%= @form.month %></p>
+  <p>休塾・退塾開始月:<%= @form.month %></p>
   <p>復塾月:<%= @form.f_month %></p>
   <p>理由:<%= @form.reason_i18n %></p>
   <p>備考:<%= @form.comment %></p>
 
-  <%= form.submit  %>
-  <%= form.submit "戻る", name: 'back' %>
-<% end %>
+  <%= form_with(model: @form, method: :post, url: back_forms_path, local: true) do |form| %>
+    <%= form.hidden_field :number %>
+    <%= form.hidden_field :name %>
+    <%= form.hidden_field :application_date %>
+    <%= form.hidden_field :classification %>
+    <%= form.hidden_field :month %>
+    <%= form.hidden_field :f_month%>
+    <%= form.hidden_field :reason %>
+    <%= form.hidden_field :comment %>
+    <%= form.submit '入力画面に戻る' %>
+  <% end %>
+
+  <%= form_with(model: @form, method: :get, url: done_forms_path, local: true) do |form| %>
+    <%= form.hidden_field :number %>
+    <%= form.hidden_field :name %>
+    <%= form.hidden_field :application_date %>
+    <%= form.hidden_field :classification %>
+    <%= form.hidden_field :month %>
+    <%= form.hidden_field :f_month%>
+    <%= form.hidden_field :reason %>
+    <%= form.hidden_field :comment %>
+	  <%= form.submit '送信する' %>
+  <% end %>
