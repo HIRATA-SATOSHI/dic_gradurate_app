@@ -1,5 +1,9 @@
 class Student < ApplicationRecord
   validates :name, :course, :enrollment_status, :site, :school_year, :parent_name, :email_address, presence: true
+  validates :number, presence: true, uniqueness: true
+  validates :phone_number,
+    presence: true,
+    numericality: { only_integer: true }
   
   enum course: {level_1: 0,
     level_2: 1,

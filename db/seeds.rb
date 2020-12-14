@@ -2,21 +2,86 @@ Staff.create!( email: "admin_admin@jprep.jp",
   password: "adminadmin#1",
   password_confirmation: "adminadmin#1",
   name: "ZDM管理者",
-  department: "管理部",
+  department: 5,
   admin: true)
 
   Staff.create!( email: "staff@jprep.jp",
   password: "staffstaff#1",
   password_confirmation: "staffstaff#1",
   name: "スタッフ1",
-  department: "酒田サポートデスク",
+  department: 2,
   admin: false)
 
-  150.times do |n|
+  60.times do |n|
     name = Faker::JapaneseMedia::DragonBall.character
     email = Faker::Internet.email
     password = "password"
-    department = "校舎事務局"
+    department = 0
+    Staff.create!(name: name,
+               email: email,
+               password: password,
+               password_confirmation: password,
+               department: department,
+                )
+  end
+
+  30.times do |n|
+    name = Faker::JapaneseMedia::StudioGhibli.character
+    email = Faker::Internet.email
+    password = "password"
+    department = 1
+    Staff.create!(name: name,
+               email: email,
+               password: password,
+               password_confirmation: password,
+               department: department,
+                )
+  end
+
+  20.times do |n|
+    name = Faker::JapaneseMedia::OnePiece.character
+    email = Faker::Internet.email
+    password = "password"
+    department = 2
+    Staff.create!(name: name,
+               email: email,
+               password: password,
+               password_confirmation: password,
+               department: department,
+                )
+  end
+
+  15.times do |n|
+    name = Faker::JapaneseMedia::Conan.character
+    email = Faker::Internet.email
+    password = "password"
+    department = 3
+    Staff.create!(name: name,
+               email: email,
+               password: password,
+               password_confirmation: password,
+               department: department,
+                )
+  end
+
+  15.times do |n|
+    name = Faker::Movies::BackToTheFuture.character
+    email = Faker::Internet.email
+    password = "password"
+    department = 4
+    Staff.create!(name: name,
+               email: email,
+               password: password,
+               password_confirmation: password,
+               department: department,
+                )
+  end
+
+  15.times do |n|
+    name = Faker::Movies::StarWars.character
+    email = Faker::Internet.email
+    password = "password"
+    department = 5
     Staff.create!(name: name,
                email: email,
                password: password,
@@ -34,7 +99,7 @@ Staff.create!( email: "admin_admin@jprep.jp",
     site = ["0","1","2","3","4"]
     school_year = ["0","1","2","3","4","5","6","7"]
     parent_name = Faker::JapaneseMedia::Doraemon.character
-    phone_number = Faker::PhoneNumber.phone_number
+    phone_number = "031234456#{n}"
     email_address = Faker::Internet.email
     live_address =  Faker::Address.full_address
     Student.create!(number: number,

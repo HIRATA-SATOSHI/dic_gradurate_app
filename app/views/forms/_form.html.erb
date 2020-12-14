@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :number  %> 
-    <%= form.text_field :number %>
+    <%= form.number_field :number, min: 10000, max: 99999 %>
   </div>
 
   <div class="field">

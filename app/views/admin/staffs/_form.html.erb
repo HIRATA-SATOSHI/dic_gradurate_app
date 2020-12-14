@@ -36,7 +36,7 @@
 
   <div class="field">
     <%= f.label :所属部署 %><br />
-    <%= f.text_field :department %>
+    <%= f.select :department, Staff.departments_i18n.invert %></div>
   </div>
 
   <div class="field">

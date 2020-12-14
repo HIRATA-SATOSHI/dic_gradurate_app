@@ -12,6 +12,7 @@ ja:
       student: 生徒   
     attributes:
       student:
+        number: 生徒番号
         name: 生徒氏名
         course: 通塾コース
         enrollment_status: 在籍状況
@@ -21,6 +22,7 @@ ja:
         phone_number: 連絡先電話番号
         email_address: メールアドレス
         live_address: 住所
+        respond_memo: 対応メモ
 
   enums:
     student:
