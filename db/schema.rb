@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_04_142440) do
+ActiveRecord::Schema.define(version: 2020_12_14_124049) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 2020_12_04_142440) do
     t.text "live_address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "respond_memo"
   end
 
 end
