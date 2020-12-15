@@ -5,4 +5,12 @@ class Form < ApplicationRecord
   enum status:{ not_yet: 0, in_progress: 1, completed: 2 }
   enum cancel: { yes: true, no: false }
 
+  validate :month_cannot_be_later_than_f_month
+  private
+  def month_cannot_be_later_than_f_month
+    if month > f_month
+      errors.add(:month, "は復塾月より後への設定はできません")
+    end
+  end
+
 end
