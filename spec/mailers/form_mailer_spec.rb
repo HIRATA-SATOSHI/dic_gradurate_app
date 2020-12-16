@@ -1,18 +1,21 @@
 require "rails_helper"
 
-RSpec.describe FormMailer, type: :mailer do
-  describe "send_when_push" do
-    let(:mail) { FormMailer.send_when_push }
+describe FormMailer do
 
-    it "ヘッダーの表示" do
-      expect(mail.subject).to eq("申請のあった休退塾届をお送りします。")
-      expect(mail.to).to eq( "student.email_address")
-      expect(mail.from).to eq( "J PREP休退塾届管理事務局")
+  describe 'メール送信ボタンを押す' do
+    subject(:mail) do
+      described_class.send_mail.deliver_now
+      ActionMailer::Base.deliveries.last
     end
 
-    it "中身の表示" do
-      expect(mail.body.encoded).to match("この度は,J PREP事務局にお問い合わせいただきありがとうございました。")
+    context 'メール受信した時' do
+      it { expect(mail.from.first).to eq('jprepzdm@gmail.com') }
+      it { expect(mail.to.first).to eq('sample_parent01@test.com') }
+      it { expect(mail.subject).to eq('申請のあった休退塾届をお送りします。') }
+      it { expect(mail.body).to match(/この度は,J PREP事務局にお問い合わせいただきありがとうございました。
+      お問合せがございました、休塾および退塾に関わる申請をお送りいたします。
+      以下のリンクよりお入りいただき申請の方の提出をお願い致します。
+      スタッフ一同、またの校舎でお目にかかるのを心よりお待ち申し上げます。/) }
     end
   end
-
 end
