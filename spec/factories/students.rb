@@ -2,6 +2,7 @@ FactoryBot.define do
     # 作成するテストデータの名前を「student」とします
     # （実際に存在するクラス名と一致するテストデータの名前をつければ、そのクラスのテストデータを自動で作成します）
     factory :student do
+      number {'10001'}
       name   { 'sample_student01' }
       course { 'level_1' }
       enrollment_status { 'yyes'}
@@ -13,6 +14,7 @@ FactoryBot.define do
       live_address {'東京都目黒区'}
     end
     factory :second_student, class: Student do
+      number {'10002'}
       name   { 'sample_student02' }
       course { 'level_2' }
       enrollment_status { 'yyes'}
@@ -24,6 +26,7 @@ FactoryBot.define do
       live_address {'東京都渋谷区'}
     end    
     factory :third_student, class: Student do
+      number {'10003'}
       name   { 'sample_student03' }
       course { 'level_3' }
       enrollment_status { 'nno'}
@@ -35,6 +38,7 @@ FactoryBot.define do
       live_address {'東京都杉並区'}
     end  
     factory :forth_student, class: Student do
+      number {'10004'}
       name   { 'sample_student04' }
       course { 'level_4' }
       enrollment_status { 'yyes'}
@@ -46,6 +50,7 @@ FactoryBot.define do
       live_address {'東京都新宿区'}
     end       
     factory :fifth_student, class: Student do
+      number {'10005'}
       name   { 'sample_student05' }
       course { 'scholars' }
       enrollment_status { 'nno'}

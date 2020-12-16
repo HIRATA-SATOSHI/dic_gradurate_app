@@ -1,6 +1,11 @@
 require 'rails_helper'
 RSpec.describe '生徒管理機能', type: :system do
     before do
+      @staff = FactoryBot.create(:staff)
+      visit new_staff_session_path
+      fill_in 'staff_email', with: "test_staff_01@test.com"
+      fill_in 'staff_password', with: "12345678"
+      click_on 'ログイン'
       FactoryBot.create(:student)
       FactoryBot.create(:second_student)
       FactoryBot.create(:third_student)
@@ -11,6 +16,7 @@ RSpec.describe '生徒管理機能', type: :system do
       context '生徒を新規作成した場合' do
         it '作成した生徒が表示される' do
           visit new_student_path
+          fill_in 'student_number', with: '10001'
           fill_in 'student_name', with: 'sample_student01'
           select 'レベル1', from: 'student_course'
           select '通塾中', from: 'student_enrollment_status'
@@ -35,10 +41,10 @@ RSpec.describe '生徒管理機能', type: :system do
           expect(page).to have_content '通塾中'
         end
       end
-      context '生徒一覧の生徒IDをクリックすると' do
+      context '生徒一覧の生徒番号をクリックすると' do
         it '降順の並びで表示される' do     
           visit students_path
-          click_link '生徒ID' 
+          click_link '生徒番号' 
           visit students_path(sort_expired: "true")
           student_list = all('.student_list')
         end
@@ -66,13 +72,13 @@ RSpec.describe '生徒管理機能', type: :system do
       end
 
       context '範囲検索をかける' do
-        it '生徒IDの範囲検索を行う'do
+        it '生徒番号の範囲検索を行う'do
           visit students_path
-          fill_in "q_id_gteq", with: "1"
-         fill_in "q_id_lt", with: "2"
+          fill_in "q_number_gteq", with: "10001"
+         fill_in "q_number_lteq", with: "10001"
           click_on "検索"
-          expect(page).to have_content '1'
-          expect(page).not_to have_content '0'         
+          expect(page).to have_content '10001'
+          expect(page).not_to have_content '10002'         
         end
       end
 
