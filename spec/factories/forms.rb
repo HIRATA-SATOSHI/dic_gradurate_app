@@ -4,8 +4,8 @@ FactoryBot.define do
     name   { 'sample_student01' }
     application_date { '2020-12-19' }
     classification { 'rest' }
-    month { '2021-01'}
-    f_month { '2021-04'}
+    month{ Date.new(2021, 1) }
+    f_month{ Date.new(2021, 3) }
     reason {'entance_exam'}
   end
 end
