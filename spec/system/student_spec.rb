@@ -52,11 +52,29 @@ RSpec.describe '生徒管理機能', type: :system do
     end
 
     describe '生徒詳細表示機能' do
-       context '任意の生徒詳細画面に遷移した場合' do
-         it '該当生徒の内容が表示される' do
+      context '任意の生徒詳細画面に遷移した場合' do
+        it '該当生徒の内容が表示される' do
          end
-       end
+      end
     end
+
+    describe '生徒詳細表示機能' do
+      context '任意の生徒詳細画面の申請フォーム送付を押した時' do
+        it 'その生徒へ申請フォームがメールで送付される' do
+          visit students_path
+          click_link '10001'
+          expect(page).to have_content '10001'
+          click_link '申請フォーム送付'
+          expect {
+            page.accept_confirm "この生徒へ休退塾申請を送信しますか？"
+            expect(page).to have_content "この生徒へ休退塾申請フォームを送りました"
+          }
+          #  visit letter_path
+          #  expect(page).to have_content '申請のあった休退塾届をお送りします。'
+        end
+      end
+   end
+
     describe '検索機能' do
       before do
       end
