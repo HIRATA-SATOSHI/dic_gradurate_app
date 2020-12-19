@@ -2,9 +2,9 @@ require "rails_helper"
 
 describe FormMailer do
 
-  describe 'メール送信ボタンを押す' do
+  describe 'send_when_push(student)' do
     subject(:mail) do
-      described_class.send_mail.deliver_now
+      described_class.send_when_push.deliver_now
       ActionMailer::Base.deliveries.last
     end
 

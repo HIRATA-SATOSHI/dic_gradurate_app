@@ -1,5 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe Form, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe 'formモデル機能', type: :model do
+  describe 'バリデーションのテスト' do
+    context '申請フォームを新規で作成する際に必須項目が一つでも空の場合' do
+      it 'バリデーションにひっかる' do
+        form = Form.new(number: '100001', name: '', application_date: '2020/12/19',classification: 'rest', 
+                             month: '2021/01', f_month: '2021/04', reason: 'entance_exam')
+        expect(form).not_to be_valid
+      end
+    end
+
+  end
 end
