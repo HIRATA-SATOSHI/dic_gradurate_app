@@ -1,0 +1,69 @@
+<%= link_to '生徒検索一覧', students_path %>
+<% if current_staff.admin? %>
+  <%= link_to 'スタッフ一覧', admin_staffs_path %>
+<% end %>
+<br>
+<%= search_form_for @q do |f| %>
+    <%= f.label :form, "生徒名検索" %>
+    <%= f.search_field :name_cont %>
+<br>
+    <%= f.label :id, "生徒番号検索" %>
+    <%= f.number_field :number_gteq, min: 10000, max: 99999 %>〜
+    <%= f.number_field :number_lteq, min: 10000, max: 99999  %>
+<br>
+    <%= f.label :classification %>
+    <%= f.radio_button :classification_eq, '', {:checked => true} %>指定なし
+    <%= f.radio_button :classification_eq, 0 %>0:退塾
+    <%= f.radio_button :classification_eq, 1 %>1:休塾
+<br>
+    <%= f.label :application_date, "申請日検索" %>
+    <%= f.date_field :application_date_gteq, include_blank: true %>〜
+    <%= f.date_field :application_date_lt, include_blank: true %>
+<br> 
+    <%= f.label :month, "休退塾開始月検索" %>
+    <%= f.date_field :month_gteq, include_blank: true %>〜
+    <%= f.date_field :month_lt, include_blank: true %>
+<br> 
+    <%= f.label :f_month, "復塾月検索" %>
+    <%= f.date_field :f_month_gteq, include_blank: true %>〜
+    <%= f.date_field :f_month_lt, include_blank: true %>
+<br>
+    <%= f.submit "検索" %>
+<% end %>
+<br>
+<h5>休塾・退塾申請生徒一覧</h5>
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th><%= sort_link(@q, :id, "フォームID") %></th>
+      <th>提出日時</th>
+      <th>届申請日</th>      
+      <th>申請区分</th>
+      <th>生徒番号</th>
+      <th>生徒氏名</th>     
+      <th>休退塾開始月</th>
+      <th>復塾月</th>
+      <th>更新日時</th>
+      <th><%= sort_link(@q, :status, "対応ステータス") %></th>
+      <th><%= sort_link(@q, :cancel, "キャンセル") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @form.each do |form| %>
+      <tr>
+        <td><%= link_to form.id, form_path(form.id) %></td>
+        <td><%= form.created_at %></td>
+        <td><%= form.application_date %></td>
+        <td><%= form.classification_i18n %></td>
+        <td><%= form.number %></td>
+        <td><%= form.name %></td>        
+        <td><%= form.month %></td>
+        <td><%= form.f_month %></td>
+        <td><%= form.updated_at %></td>
+        <td><%= form.status_i18n %></td>
+        <td><%= form.cancel %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -58,7 +58,7 @@ RSpec.describe 'ログイン・ログアウト機能・管理画面・スタッ�
           fill_in 'staff_email', with: 'test_staff_01@test.com'
           fill_in 'staff_password', with: '12345678'
           fill_in 'staff_password_confirmation', with: '12345678'
-          fill_in 'staff_department', with: '自由が丘校事務局'
+          select '校舎事務局', from: 'staff_department'
           click_on '登録する'
           expect(page).to have_content 'test_staff_01'
         end

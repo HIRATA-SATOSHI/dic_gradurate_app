@@ -39,6 +39,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry-rails'
+  gem 'pry-doc'
+  gem 'pry-byebug'
   gem 'rspec-rails', '~> 3.8'
   gem 'factory_bot_rails'
 end
@@ -50,8 +53,6 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'pry-rails'
-  gem 'letter_opener_web'
 end
 
 group :test do
@@ -66,9 +67,11 @@ gem 'ransack'
 gem 'ransack-enum', '~> 0.3'
 gem 'rails-i18n'
 gem 'enum_help'
-gem 'kaminari', '~> 0.17.0'
+gem 'kaminari'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'devise'
 gem 'devise-i18n'
 gem 'faker'
+gem 'letter_opener_web'
+gem 'letter_opener'
 

@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_01_105359) do
+ActiveRecord::Schema.define(version: 2020_12_14_153851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "forms", force: :cascade do |t|
+    t.string "number", null: false
+    t.string "name", null: false
+    t.date "application_date", null: false
+    t.integer "classification", null: false
+    t.date "month", null: false
+    t.date "f_month", null: false
+    t.integer "reason", null: false
+    t.text "comment"
+    t.integer "status"
+    t.boolean "cancel", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "staffs", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,13 +39,14 @@ ActiveRecord::Schema.define(version: 2020_12_01_105359) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
-    t.string "department"
+    t.integer "department"
     t.boolean "admin", default: false
     t.index ["email"], name: "index_staffs_on_email", unique: true
     t.index ["reset_password_token"], name: "index_staffs_on_reset_password_token", unique: true
   end
 
   create_table "students", force: :cascade do |t|
+    t.integer "number", null: false
     t.string "name", default: "", null: false
     t.integer "course", null: false
     t.integer "enrollment_status", null: false
@@ -42,6 +58,7 @@ ActiveRecord::Schema.define(version: 2020_12_01_105359) do
     t.text "live_address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "respond_memo"
   end
 
 end

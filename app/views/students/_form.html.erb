@@ -13,7 +13,10 @@
 
   <div class="container">  
     <ul class="row">
-
+      <div class="col-md-6 label"><%= form.label :number %></div>
+      <div class="col-md-6 field"><%= form.number_field :number, min: 10000, max: 99999 %></div>
+    </ul>
+    <ul class="row">
       <div class="col-md-6 label"><%= form.label :name %></div>
       <div class="col-md-6 field"><%= form.text_field :name %></div>
     </ul>
@@ -48,6 +51,10 @@
     <ul class="row">
       <div class="col-md-6 label"><%= form.label :live_address %></div>
       <div class="col-md-6 field"><%= form.text_field :live_address %></div>
+    </ul>
+    <ul class="row">
+      <div class="col-md-6 label"><%= form.label :respond_memo %></div>
+      <div class="col-md-6 field"><%= form.text_field :respond_memo %></div>
     </ul>
     <br>
     <br>

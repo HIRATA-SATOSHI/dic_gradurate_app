@@ -1,0 +1,62 @@
+<%= form_with(model: @form, local: true) do |form| %>
+    <br>
+    <p id="notice"><%= notice %></p>
+    
+    <div class="container">  
+    <table class="table">
+      <ul class="row">
+        <div class="col-md-6 label"><strong>生徒ID</strong></div>
+        <div class="col-md-6 field"><%= @form.number %></div>
+      </ul>
+      
+      <ul class="row">
+        <div class="col-md-6 label"><strong>生徒氏名</strong></div>
+        <div class="col-md-6 field"><%= @form.name %></div>    
+      </ul>
+    
+    
+      <ul class="row">
+       <div class="col-md-6 label"><strong>申請区分</strong></div>
+       <div class="col-md-6 field"><%= @form.classification_i18n %></div></div>
+      </ul>
+    
+      <ul class="row">
+        <div class="col-md-6 label"><strong>休塾・退塾開始月</strong></div>
+        <div class="col-md-6 field"><%= @form.month %></div>
+      </ul>
+    
+      <ul class="row">
+        <div class="col-md-6 label"><strong>復塾月</strong></div>
+        <div class="col-md-6 field"><%= @form.f_month %></div>
+      </ul>
+    
+      <ul class="row">
+        <div class="col-md-6 label"><strong>理由</strong></div>
+        <div class="col-md-6 field"><%= @form.reason_i18n %></div>
+      </ul>
+    
+      <ul class="row">
+        <div class="col-md-6 label"><strong>備考</strong></div>
+        <div class="col-md-6 field"><%= @form.comment %></div>
+      </ul>
+    
+      <ul class="row">
+        <div class="col-md-6 label"><strong>生徒情報作成日時</strong></div>
+        <div class="col-md-6 field"><%= @form.created_at %></div>
+      </ul>
+    
+      <ul class="row">
+        <div class="col-md-6 label"><strong>生徒情報更新日時</strong></div>
+        <div class="col-md-6 field"><%= @form.updated_at %></div>
+      </ul>
+    
+    <table class="table">
+    </div>
+    
+    
+    <%= link_to '編集画面に行く', edit_form_path(@form) %>
+    <br>
+    <br>
+    <button type="button" class="btn btn-info btn-sm"><%= link_to '休塾・退塾申請生徒一覧', forms_path %></button>
+    <br>
+    <% end %>

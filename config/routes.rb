@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :forms do
+    collection do
+      post :confirm
+      post :back
+      get :done
+    end
+  end
   # devise_for :staffs
   resources :students do
     collection do
@@ -17,6 +24,6 @@ Rails.application.routes.draw do
     resources :staffs
   end
   
-
-  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+  post 'mailer/students', controller: 'mailer/students', action: 'send_form'
+  mount LetterOpenerWeb::Engine, at: "/letter_opener"
 end

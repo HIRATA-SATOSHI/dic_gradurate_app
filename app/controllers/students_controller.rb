@@ -22,7 +22,6 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.new(student_params)
-
     respond_to do |format|
       if @student.save
         format.html { redirect_to @student, notice: 'Student was successfully created.' }
@@ -67,6 +66,6 @@ class StudentsController < ApplicationController
   end
 
   def student_params
-    params.require(:student).permit(:name, :course, :enrollment_status, :site, :school_year, :parent_name, :phone_number, :email_address, :live_address)
+    params.require(:student).permit(:number, :name, :course, :enrollment_status, :site, :school_year, :parent_name, :phone_number, :email_address, :live_address, :respond_memo)
   end
 end

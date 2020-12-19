@@ -1,0 +1,34 @@
+ja:
+  activerecord:
+    models:
+      form: 休塾・退塾申請  
+    attributes:
+      form:
+        number: 生徒番号
+        name: 生徒氏名
+        course: 受講コース
+        application_date: 申請年月日
+        classification: 申請区分
+        month: 開始月
+        f_month: 復塾予定月
+        reason: 理由
+        comment: 備考
+        cancel: キャンセル
+        status: ステータス
+        email_address: メールアドレス
+     
+  enums:
+    form:
+      classification:
+        leave: 退塾
+        rest: 休塾
+      reason:
+        result: 成果
+        club_activities: 部活動
+        entance_exam: 受験準備
+        study_abroad: 留学
+        others: その他
+      status:
+        not_yet: 未着手
+        in_progress: 対応中
+        completed: 完了

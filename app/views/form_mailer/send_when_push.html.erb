@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta content="text/html; charset=UTF-8" />
+  <style type="text/css">
+    h2 {
+      color: #e7454a;
+    }
+    p hr {
+      color: #2d2a24;
+    }
+  </style>
+</head>
+<body>
+  <h2><%= @student.name %> 様 保護者様</h2>
+  <hr />
+  <p>
+    この度は,J PREP事務局にお問い合わせいただきありがとうございました。
+    お問合せがございました、休塾および退塾に関わる申請をお送りいたします。
+    以下のリンクよりお入りいただき申請の方の提出をお願い致します。
+    スタッフ一同、またの校舎でお目にかかるのを心よりお待ち申し上げます。
+  </p>
+
+  <a href="http://localhost:3000/forms/new">休退塾申請フォームリンク先URL</a>※これは後で消します<br>
+  <a href="https://serene-retreat-22912.herokuapp.com/forms/new">休退塾申請フォームリンク先本番URL</a>
+  
+  <p>
+    J PREP事務局<br />
+  </p>
+  <hr />
+</body>
+</html>

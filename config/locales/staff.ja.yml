@@ -1,0 +1,21 @@
+ja:
+  activerecord:
+    models:
+      staff: スタッフ 
+    attributes:
+      staff:
+        department: 所属部署
+        name: スタッフ名
+        login_password: ログインパスワード
+        email_address: ログインアドレス
+        
+
+  enums:
+    staff:
+      department:
+        school_admin: 校舎事務局
+        support_desk: サポートデスク
+        enrolled_management: 在籍管理
+        logistics: 教材発送センター
+        accounting: 経理
+        management_department: 管理部
