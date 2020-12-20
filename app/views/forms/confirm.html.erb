@@ -21,7 +21,7 @@
     <%= form.submit '入力画面に戻る' %>
   <% end %>
 
-  <%= form_with(model: @form, method: :get, url: done_forms_path, local: true) do |form| %>
+  <%= form_with(model: @form, method: :post, url: forms_path, local: true) do |form| %>
     <%= form.hidden_field :number %>
     <%= form.hidden_field :name %>
     <%= form.hidden_field :application_date %>

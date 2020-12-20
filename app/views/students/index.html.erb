@@ -1,11 +1,11 @@
-<%= link_to '生徒新規作成', new_student_path %>
+<button type="button" class="btn btn-success btn-sm"><%= link_to '生徒新規作成', new_student_path %></button>
 <% if current_staff.admin? %>
-  <%= link_to 'スタッフ一覧', admin_staffs_path %>
+  <button type="button" class="btn btn-warning btn-sm"><%= link_to 'スタッフ一覧', admin_staffs_path %></button>
 <% end %>
-<br>
-<%= link_to '休塾・退塾申請生徒一覧', forms_path %>
-<br>
-<%= search_form_for @q do |f| %>
+<button type="button" class="btn btn-info btn-sm"><%= link_to '休塾・退塾申請生徒一覧', forms_path %></button>
+
+<div>
+  <%= search_form_for @q do |f| %>
     <%= f.label :student, "生徒名検索" %>
     <%= f.search_field :name_cont %>
 <br>
@@ -37,8 +37,9 @@
     <%= f.radio_button :enrollment_status_eq, 1 %>退塾
     <%= f.radio_button :enrollment_status_eq, 2 %>休塾
 <br>
-    <%= f.submit "検索" %>
+  <%= f.submit "検索" %>
 <% end %>
+</div>
 <br>
 ページ:<%= @student.current_page %> / <%= @student.num_pages %>
 <br>
@@ -68,7 +69,7 @@
         <% if current_staff.admin? %>
           <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
-      </tr>
+      </tr> 
      <% end %>
   </tbody>
 </table>
