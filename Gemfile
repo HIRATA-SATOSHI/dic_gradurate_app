@@ -74,4 +74,6 @@ gem 'devise-i18n'
 gem 'faker'
 gem 'letter_opener_web'
 gem 'letter_opener'
-
+gem 'bootstrap', '~> 4.5'
+gem 'jquery-rails'
+gem 'devise-bootstrap-views', '~> 1.0'
