@@ -53,11 +53,34 @@ body {
   background-color: #f0f0f0;
 }
 
+btn.btn-danger btn  {
+  color: white;
 
+  &:hover {
+    // color: #fff;
+    // background-color: #000;
+    opacity: 0.8;
+  }
+}
+a .btn btn-danger {
+  color: white;
+}
 
-/* .fas fa-user {
+.btn a {
+  color: white;
+
+  &:hover {
+    // color: #fff;
+    // background-color: #000;
+    opacity: 0.8;
+  }
+}
+
+.fas.fa-user {
   float: right;
-} */
+  text-align: right;
+  margin-left: 1010px
+ } 
 
 /* form {
   background-color: #0099FF;
@@ -68,3 +91,18 @@ body {
 } */
 /*# sourceMappingURL=student.css.map */
 
+.trans_button {
+  text-align: center;
+  color: white;
+}
+
+.search {
+margin-top :15px;
+margin-left: 30px;
+border-color: gray;
+border-radius: 10px 20px 30px 40px;
+}
+
+.staff_make {
+  text-align: center;
+}

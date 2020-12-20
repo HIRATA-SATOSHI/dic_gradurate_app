@@ -15,42 +15,43 @@
     <%= form.label :number  %> 
     <%= form.number_field :number, min: 10000, max: 99999 %>
   </div>
-
+ <br>
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
-
+ <br>
   <div class="field">
-  <%= form.label :application_date %>
-  <%= form.date_field :application_date %>
-</div>
-
+    <%= form.label :application_date %>
+    <%= form.date_field :application_date %>
+  </div>
+ <br>
   <div class="field">
     <%= form.label :classification %>
     <%= form.select :classification, Form.classifications_i18n.invert %>
   </div>
-
+ <br>
   <div class="field">
     <%= form.label :month %>
     <%= form.date_select :month, {:discard_day => true} %>
   </div>
-
+ <br>
   <div class="field">
     <%= form.label :f_month %>
     <%= form.date_select :f_month, {:discard_day => true} %>
   </div>
 
+ <br>
   <div class="field">
     <%= form.label :reason %>
     <%= form.select :reason, Form.reasons_i18n.invert %>
   </div>
-
+ <br>
   <div class="field">
     <%= form.label :comment %>
     <%= form.text_area :comment %>
   </div>
-
+ <br>
   <% if action_name == 'edit' %>
     <div class="field">
       <%= form.label :status %>
@@ -62,10 +63,10 @@
     </div>
   <% end %>
 
-
+ <br>
   <div class="actions">
     <%= form.submit "送信する" %>
   </div>
- 
+ <br>
 <% end %>
   
