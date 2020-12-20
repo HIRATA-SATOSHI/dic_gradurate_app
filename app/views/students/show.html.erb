@@ -1,13 +1,13 @@
 <div class="trans_button">
-  <button type="button" class="btn btn-success"  ><%= link_to '編集画面に行く', edit_student_path(@student) %></button>
+  <button type="button" class="btn btn-warning"  ><%= link_to 'この生徒を編集', edit_student_path(@student) %></button>
   <button type="button" class="btn btn-info"  ><%= link_to '生徒検索一覧へ', students_path %></button>
 </div>
 <br>
 <%= form_with(model: @student, local: true) do |form| %>
-<br>
-<div class="alert alert-success" role="alert">
+
+
   <p id="notice"><%= notice %></p>
-</div>
+
 
 <div class="container">  
 <table class="table">

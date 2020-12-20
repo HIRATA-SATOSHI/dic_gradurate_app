@@ -53,19 +53,6 @@ body {
   background-color: #f0f0f0;
 }
 
-btn.btn-danger btn  {
-  color: white;
-
-  &:hover {
-    // color: #fff;
-    // background-color: #000;
-    opacity: 0.8;
-  }
-}
-a .btn btn-danger {
-  color: white;
-}
-
 .btn a {
   color: white;
 
@@ -79,7 +66,7 @@ a .btn btn-danger {
 .fas.fa-user {
   float: right;
   text-align: right;
-  margin-left: 1010px
+  margin-left: 955px
  } 
 
 /* form {
@@ -104,5 +91,9 @@ border-radius: 10px 20px 30px 40px;
 }
 
 .staff_make {
+  text-align: center;
+}
+
+.aleart alert-info {
   text-align: center;
 }

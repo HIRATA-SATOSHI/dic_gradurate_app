@@ -71,7 +71,8 @@
         <td><%= student.course_i18n %></td>
         <td><%= student.enrollment_status_i18n %></td>
         <% if current_staff.admin? %>
-          <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><button type="button" class="btn btn-danger btn-sm">
+            <%= link_to '削除', student, method: :delete, data: { confirm: 'この生徒を削除しますか？' } %></button></td>
         <% end %>
       </tr> 
      <% end %>

@@ -20,7 +20,8 @@
           <td><%= staff.email %></td>
           <td><%= staff.department_i18n %></td>         
           <td><%= staff.admin %></td>
-          <td><%= link_to '削除', admin_staff_path(staff), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><button type="button" class="btn btn-danger btn-sm">
+            <%= link_to '削除', admin_staff_path(staff), method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
         </tr>
       <% end %>
     </tbody>  

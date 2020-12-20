@@ -22,7 +22,7 @@
           <i class="fas fa-user"><%= current_staff.name %>
         <% end %>
         <% if staff_signed_in? %>
-          <button type="button" class="btn btn-danger btn-sm "><%= link_to "ログアウト", destroy_staff_session_path, method: :delete %></button>
+          <button type="button" class="btn btn-danger "><%= link_to "ログアウト", destroy_staff_session_path, method: :delete %></button>
         <% end %> </i>
       </p>
     </div>
