@@ -6,6 +6,9 @@ body {
   text-align: center;
 }
 
+th {
+  text-align: center;  
+}
 
 .container {
   text-align: center;
@@ -88,7 +91,8 @@ border-radius: 10px 20px 30px 40px;
 }
 
 .t_top {
-  margin-top : 150px;
+  margin-top : 120px;
+  color: #003366;
 }
 
 .top  {
@@ -107,4 +111,8 @@ input[type="email"] {
 input[type="password"] {
   width: 400px;
     height: 40px;
+}
+
+.col-form-label {
+  text-align: right;  
 }

@@ -7,57 +7,58 @@
     <br>
     <p id="notice"><%= notice %></p>
     
-    <div class="container">  
-    <table class="table">
-      <ul class="row">
-        <div class="col-md-6 label"><strong>生徒ID</strong></div>
-        <div class="col-md-6 field"><%= @form.number %></div>
-      </ul>
-      
-      <ul class="row">
-        <div class="col-md-6 label"><strong>生徒氏名</strong></div>
-        <div class="col-md-6 field"><%= @form.name %></div>    
-      </ul>
-    
-    
-      <ul class="row">
-       <div class="col-md-6 label"><strong>申請区分</strong></div>
-       <div class="col-md-6 field"><%= @form.classification_i18n %></div></div>
-      </ul>
-    
-      <ul class="row">
-        <div class="col-md-6 label"><strong>休塾・退塾開始月</strong></div>
-        <div class="col-md-6 field"><%= @form.month %></div>
-      </ul>
-    
-      <ul class="row">
-        <div class="col-md-6 label"><strong>復塾月</strong></div>
-        <div class="col-md-6 field"><%= @form.f_month %></div>
-      </ul>
-    
-      <ul class="row">
-        <div class="col-md-6 label"><strong>理由</strong></div>
-        <div class="col-md-6 field"><%= @form.reason_i18n %></div>
-      </ul>
-    
-      <ul class="row">
-        <div class="col-md-6 label"><strong>備考</strong></div>
-        <div class="col-md-6 field"><%= @form.comment %></div>
-      </ul>
-    
-      <ul class="row">
-        <div class="col-md-6 label"><strong>生徒情報作成日時</strong></div>
-        <div class="col-md-6 field"><%= @form.created_at %></div>
-      </ul>
-    
-      <ul class="row">
-        <div class="col-md-6 label"><strong>生徒情報更新日時</strong></div>
-        <div class="col-md-6 field"><%= @form.updated_at %></div>
-      </ul>
-    
-    <table class="table">
-    </div>
-    
-  
+    <p> 
+      <strong>生徒ID</strong>
+      <%= @form.number %>
+    </p>
     <br>
-    <% end %>
+    
+    <p> 
+       <strong>生徒氏名</strong>
+      <%= @form.name %> 
+    </p>
+    <br>
+
+    <p>
+       <strong>申請区分</strong>
+       <%= @form.classification_i18n %>
+    </p>
+    <br>
+
+    <p>
+       <strong>休塾・退塾開始月</strong>
+       <%= @form.month %>
+     </p>
+     <br>
+
+     <p>   
+       <strong>復塾月</strong>
+       <%= @form.f_month %></div>
+      </p>
+      <br>
+    
+     <p> 
+        <strong>理由</strong>
+        <%= @form.reason_i18n %>
+      </p>
+      <br>
+    
+     <p> 
+       <strong>備考</strong>
+       <%= @form.comment %>
+     </p>
+     <br>
+ 
+     <p> 
+        <strong>生徒情報作成日時</strong>
+        <%= @form.created_at %>
+      </p>
+      <br>
+
+      <p>       
+        <strong>生徒情報更新日時</strong>
+        <%= @form.updated_at %></div>
+      </p>
+      <br>  
+  
+<% end %>
