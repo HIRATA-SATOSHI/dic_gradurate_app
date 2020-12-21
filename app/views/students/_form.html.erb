@@ -1,8 +1,3 @@
-<div class="trans_button">
-  <button type="button" class="btn btn-info"><%= link_to '生徒検索一覧', students_path %></button>
-
-</div>
-<br>
 <%= simple_form_for @student, wrapper: "horizontal_form", :html => { :class => 'form-horizontal' , local: true ,url: choose_new_or_edit} do |form| %>  
   <% if student.errors.any? %>
     <div id="error_explanation">
@@ -42,4 +37,8 @@
     <%= form.submit  %>
   </div>
 <br>
+<div class="trans_button">
+  <button type="button" class="btn btn-info"><%= link_to '生徒検索一覧', students_path %></button>
+
+</div>
 <% end %>

@@ -3,7 +3,7 @@ body {
   background-color: #f8f8ff;
   color: #333;
   font-style: "Arial", "メイリオ";
-
+  text-align: center;
 }
 
 
@@ -69,14 +69,7 @@ body {
   margin-left: 955px
  } 
 
-/* form {
-  background-color: #0099FF;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin-left: 70px;
-  margin-right: 70px;
-} */
-/*# sourceMappingURL=student.css.map */
+
 
 .trans_button {
   text-align: center;
@@ -90,10 +83,28 @@ border-color: gray;
 border-radius: 10px 20px 30px 40px;
 }
 
-.staff_make {
+.aleart alert-info {
   text-align: center;
 }
 
-.aleart alert-info {
+.t_top {
+  margin-top : 150px;
+}
+
+.top  {
   text-align: center;
+  margin-top : 50px;
+}
+
+.field {
+  text-align: center;
+}
+
+input[type="email"] {
+  width: 400px;
+  height: 40px;
+}
+input[type="password"] {
+  width: 400px;
+    height: 40px;
 }
