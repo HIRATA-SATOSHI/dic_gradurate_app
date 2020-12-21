@@ -1,49 +1,49 @@
 <%= form_with(model: [:admin, @staff], local: true) do |f| %>
-    <% if staff.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(staff.errors.count, "error") %> prohibited this staff from being saved:</h2>
+  <% if staff.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(staff.errors.count, "error") %> prohibited this staff from being saved:</h2>
   
-        <ul>
-        <% staff.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
+      <ul>
+      <% staff.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
       </div>
-    <% end %>
+  <% end %>
 
-    <div class="field">
+  <div class="field">
     <%= f.label :登録スタッフ氏名 %><br />
     <%= f.text_field :name %>
   </div>
-
+  <br>
   <div class="field">
     <%= f.label :メール %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
-
+  <br>
   <div class="field">
-    <%= f.label :パスワード %>
-    <% if @minimum_password_length %>
-    <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
-    <% end %><br />
+    <%= f.label :パスワード %><br />
+      <% if @minimum_password_length %>
+        <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
+      <% end %>
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
-
+  <br>
   <div class="field">
     <%= f.label :確認用パスワード %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
-
+  <br>
   <div class="field">
     <%= f.label :所属部署 %><br />
     <%= f.select :department, Staff.departments_i18n.invert %></div>
   </div>
-
+  <br>
   <div class="field">
     <%= f.label :管理者 %><br />
     <%= f.check_box :admin %>
   </div>
-  
+  <br>
   <div class="actions">
     <%= f.submit  %>
   </div>

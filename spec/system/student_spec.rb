@@ -27,7 +27,7 @@ RSpec.describe '生徒管理機能', type: :system do
           fill_in 'student_email_address', with: 'sample_parent01@test.com'
           fill_in 'student_live_address', with: '東京都目黒区'
           click_on "登録する"
-          expect(current_path).to eq confirm_students_path
+          expect(page).to have_content "Student was successfully created."
         end
       end
     end

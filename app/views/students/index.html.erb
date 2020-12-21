@@ -1,14 +1,16 @@
-<%= link_to '生徒新規作成', new_student_path %>
-<% if current_staff.admin? %>
-  <%= link_to 'スタッフ一覧', admin_staffs_path %>
-<% end %>
-<br>
-<%= link_to '休塾・退塾申請生徒一覧', forms_path %>
-<br>
-<%= search_form_for @q do |f| %>
+<div class="trans_button">
+  <button type="button" class="btn btn-warning "><%= link_to '生徒新規作成', new_student_path %></button>
+    <% if current_staff.admin? %>
+      <button type="button" class="btn btn-primary "><%= link_to 'スタッフ一覧', admin_staffs_path %></button>
+    <% end %>
+  <button type="button" class="btn btn-info"><%= link_to '休塾・退塾申請生徒一覧', forms_path %></button>
+</div>
+
+<div class="search">
+  <%= search_form_for @q do |f| %>
     <%= f.label :student, "生徒名検索" %>
     <%= f.search_field :name_cont %>
-<br>
+
     <%= f.label :id, "生徒番号検索" %>
     <%= f.number_field :number_gteq, min: 10000, max: 99999 %>〜
     <%= f.number_field :number_lteq, min: 10000, max: 99999 %>
@@ -37,8 +39,11 @@
     <%= f.radio_button :enrollment_status_eq, 1 %>退塾
     <%= f.radio_button :enrollment_status_eq, 2 %>休塾
 <br>
-    <%= f.submit "検索" %>
+  <%= f.submit "検索" %>
 <% end %>
+
+</div>
+
 <br>
 ページ:<%= @student.current_page %> / <%= @student.num_pages %>
 <br>
@@ -66,9 +71,10 @@
         <td><%= student.course_i18n %></td>
         <td><%= student.enrollment_status_i18n %></td>
         <% if current_staff.admin? %>
-          <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><button type="button" class="btn btn-danger btn-sm">
+            <%= link_to '削除', student, method: :delete, data: { confirm: 'この生徒を削除しますか？' } %></button></td>
         <% end %>
-      </tr>
+      </tr> 
      <% end %>
   </tbody>
 </table>

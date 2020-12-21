@@ -3,9 +3,12 @@ body {
   background-color: #f8f8ff;
   color: #333;
   font-style: "Arial", "メイリオ";
-
+  text-align: center;
 }
 
+th {
+  text-align: center;  
+}
 
 .container {
   text-align: center;
@@ -53,16 +56,63 @@ body {
   background-color: #f0f0f0;
 }
 
-/* .fas fa-user {
+.btn a {
+  color: white;
+
+  &:hover {
+    // color: #fff;
+    // background-color: #000;
+    opacity: 0.8;
+  }
+}
+
+.fas.fa-user {
   float: right;
-} */
+  text-align: right;
+  margin-left: 955px
+ } 
 
-/* form {
-  background-color: #0099FF;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin-left: 70px;
-  margin-right: 70px;
-} */
-/*# sourceMappingURL=student.css.map */
 
+
+.trans_button {
+  text-align: center;
+  color: white;
+}
+
+.search {
+margin-top :15px;
+margin-left: 30px;
+border-color: gray;
+border-radius: 10px 20px 30px 40px;
+}
+
+.aleart alert-info {
+  text-align: center;
+}
+
+.t_top {
+  margin-top : 120px;
+  color: #003366;
+}
+
+.top  {
+  text-align: center;
+  margin-top : 50px;
+}
+
+.field {
+  text-align: center;
+}
+
+input[type="email"] {
+  width: 400px;
+  height: 40px;
+}
+input[type="password"] {
+  width: 400px;
+    height: 40px;
+}
+
+.col-form-label {
+  text-align: right;  
+}

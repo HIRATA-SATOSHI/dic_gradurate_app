@@ -1,4 +1,4 @@
-<%= form_with(model: student, local: true ,url: choose_new_or_edit ) do |form| %>
+<%= simple_form_for @student, wrapper: "horizontal_form", :html => { :class => 'form-horizontal' , local: true ,url: choose_new_or_edit} do |form| %>  
   <% if student.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
@@ -11,61 +11,34 @@
     </div>
   <% end %>
 
-  <div class="container">  
-    <ul class="row">
-      <div class="col-md-6 label"><%= form.label :number %></div>
-      <div class="col-md-6 field"><%= form.number_field :number, min: 10000, max: 99999 %></div>
-    </ul>
-    <ul class="row">
-      <div class="col-md-6 label"><%= form.label :name %></div>
-      <div class="col-md-6 field"><%= form.text_field :name %></div>
-    </ul>
-    <ul class="row">
-      <div class="col-md-6 label"><%= form.label :course %></div>
-      <div class="col-md-6 field"><%= form.select :course, Student.courses_i18n.invert %></div>
-    </ul>
-    <ul class="row">
-      <div class="col-md-6 label"><%= form.label :enrollment_status %></div>
-      <div class="col-md-6 field"><%= form.select :enrollment_status, Student.enrollment_statuses_i18n.invert %></div>
-    </ul>
-    <ul class="row">
-      <div class="col-md-6 label"><%= form.label :site %></div>
-      <div class="col-md-6 field"><%= form.select :site, Student.sites_i18n.invert %></div>
-    </ul>
-    <ul class="row">
-      <div class="col-md-6 label"><%= form.label :school_year %></div>
-      <div class="col-md-6 field"><%= form.select :school_year, Student.school_years_i18n.invert %></div>
-    </ul>
-    <ul class="row">
-      <div class="col-md-6 label"><%= form.label :parent_name %></div>
-      <div class="col-md-6 field"><%= form.text_field :parent_name %><div>
-    </ul>
-    <ul class="row">
-      <div class="col-md-6 label"><%= form.label :phone_number %></div>
-      <div class="col-md-6 field"><%= form.telephone_field :phone_number,size:15,maxlength:20 %></div>
-    </ul>
-    <ul class="row">
-      <div class="col-md-6 label"><%= form.label :email_address %></div>
-      <div class="col-md-6 field"><%= form.email_field :email_address,size:25 ,maxlength:30 %></div>
-    </ul>
-    <ul class="row">
-      <div class="col-md-6 label"><%= form.label :live_address %></div>
-      <div class="col-md-6 field"><%= form.text_field :live_address %></div>
-    </ul>
-    <ul class="row">
-      <div class="col-md-6 label"><%= form.label :respond_memo %></div>
-      <div class="col-md-6 field"><%= form.text_field :respond_memo %></div>
-    </ul>
-    <br>
-    <br>
-    <br>
+    <%= form.input :number, min:10000, max:99999 %>
+
+    <%= form.input :name %>
+
+    <%= form.input :course, Student.courses_i18n.invert %>
+
+    <%= form.input :enrollment_status, Student.enrollment_statuses_i18n.invert %>
+
+    <%= form.input :site, Student.sites_i18n.invert %>
+
+    <%= form.input :school_year, Student.school_years_i18n.invert %>
+
+    <%= form.input :parent_name %>
+
+    <%= form.input :phone_number,size:15,maxlength:20 %>
   
+    <%= form.input :email_address,size:25 ,maxlength:30 %>
+
+    <%= form.input :live_address %>
+ 
+    <%= form.input :respond_memo %>
+
   <div class="actions">
     <%= form.submit  %>
-    <br>
-    <br>
-    <%= link_to '生徒検索一覧へ戻る', students_path %>
   </div>
+<br>
+<div class="trans_button">
+  <button type="button" class="btn btn-info"><%= link_to '生徒検索一覧', students_path %></button>
 
-  </div>
+</div>
 <% end %>

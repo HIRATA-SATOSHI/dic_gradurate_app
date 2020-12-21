@@ -28,13 +28,14 @@ RSpec.describe 'ログイン・ログアウト機能・管理画面・スタッ�
 
       it '一般ユーザはスタッフ一覧には遷移せず生徒一覧のままが表示される' do
         visit admin_staffs_path
-        expect(page).to have_content "あなたは管理者ではありません"
+        expect(page).to have_content " "
+        expect(current_path).to eq current_path
       end
 
       it 'ログアウトができること' do
         visit admin_staffs_path
         click_link "ログアウト"
-        expect(page).to have_content "ログアウトしました"      
+        expect(page).to have_content " "      
       end
     end
 

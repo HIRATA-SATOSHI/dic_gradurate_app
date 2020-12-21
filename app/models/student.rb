@@ -1,6 +1,7 @@
 class Student < ApplicationRecord
   validates :name, :course, :enrollment_status, :site, :school_year, :parent_name, :email_address, presence: true
-  validates :number, presence: true, uniqueness: true
+  validates :number, :numericality => { :greater_than_or_equal_to => 10000 }
+  validates :number, :numericality => { :less_than_or_equal_to => 99999 }
   validates :phone_number,
     presence: true,
     numericality: { only_integer: true }

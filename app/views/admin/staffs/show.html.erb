@@ -1,31 +1,33 @@
 <%= form_with(model: [:admin, @staff], local: true) do |f| %>
     <br>
     <p id="notice"><%= notice %></p>
+  <p>
+    <strong>登録スタッフ名</strong>
+    <%= @staff.name %>
+  </p>
+  <br>
+     
+  <p>    
+    <strong>登録メール</strong>
+    <%= @staff.email %>
+  </p>
+  <br>     
     
-    <div class="container">  
-    <table class="table">
-      <ul class="row">
-        <div class="col-md-6 label"><strong>登録スタッフ名</strong></div>
-        <div class="col-md-6 field"><%= @staff.name %></div>
-      </ul>
-    
-      <ul class="row">
-       <div class="col-md-6 label"><strong>登録メール</strong></div>
-       <div class="col-md-6 field"><%= @staff.email %></div>
-      </ul>
-    
-      <ul class="row">
-       <div class="col-md-6 label"><strong>所属部署</strong></div>
-       <div class="col-md-6 field"><%= @staff.department_i18n%></div></div>
-      </ul>
-    
-      <ul class="row">
-        <div class="col-md-6 label"><strong>管理者権限</strong></div>
-        <div class="col-md-6 field"><%= @staff.admin %></div>
-      </ul>
-    </table>
-    </div>
-<% end %>
+  <p>         
+   <strong>所属部署</strong>
+    <%= @staff.department_i18n%>
+  </p>
+  <br> 
 
-<%= link_to 'スタッフ一覧', admin_staffs_path %>
-<%= link_to '編集画面に行く', edit_admin_staff_path %>
+  <p> 
+    <strong>管理者権限</strong>
+    <%= @staff.admin %>
+  <br>     
+  <p> 
+<% end %>
+<br>
+<br>
+<div class="trans_button">
+  <button type="button" class="btn btn-primary"><%= link_to 'スタッフ一覧', admin_staffs_path %></button>
+  <button type="button" class="btn btn-warning"><%= link_to '編集画面に行く', edit_admin_staff_path %></button>
+</div>

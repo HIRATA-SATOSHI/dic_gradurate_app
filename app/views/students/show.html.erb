@@ -1,83 +1,87 @@
-<%= form_with(model: @student, local: true) do |form| %>
-<br>
-<p id="notice"><%= notice %></p>
-
-<div class="container">  
-<table class="table">
-  <ul class="row">
-    <div class="col-md-6 label"><strong>生徒番号</strong></div>
-    <div class="col-md-6 field"><%= @student.number %></div>
-  </ul>
-
-  <ul class="row">
-    <div class="col-md-6 label"><strong>生徒氏名</strong></div>
-    <div class="col-md-6 field"><%= @student.name %></div>
-  </ul>
-
-  <ul class="row">
-   <div class="col-md-6 label"><strong>通塾コース</strong></div>
-   <div class="col-md-6 field"><%= @student.course_i18n %></div>
-  </ul>
-
-  <ul class="row">
-   <div class="col-md-6 label"><strong>在籍状況</strong></div>
-   <div class="col-md-6 field"><%= @student.enrollment_status_i18n %></div></div>
-  </ul>
-
-  <ul class="row">
-    <div class="col-md-6 label"><strong>通塾校舎</strong></div>
-    <div class="col-md-6 field"><%= @student.site_i18n %></div>
-  </ul>
-
-  <ul class="row">
-    <div class="col-md-6 label"><strong>学年</strong></div>
-    <div class="col-md-6 field"><%= @student.school_year_i18n %></div>
-  </ul>
-
-  <ul class="row">
-    <div class="col-md-6 label"><strong>保護者氏名</strong></div>
-    <div class="col-md-6 field"><%= @student.parent_name %></div>
-  </ul>
-
-  <ul class="row">
-    <div class="col-md-6 label"><strong>電話番号</strong></div>
-    <div class="col-md-6 field"><%= @student.phone_number %></div>
-  </ul>
-
-  <ul class="row">
-    <div class="col-md-6 label"><strong>メールアドレス</strong></div>
-    <div class="col-md-6 field"><%= @student.email_address %></div>
-  </ul>
-
-  <ul class="row">
-    <div class="col-md-6 label"><strong>住所</strong></div>
-    <div class="col-md-6 field"><%= @student.live_address %></div>
-  </ul>
-
-  <ul class="row">
-    <div class="col-md-6 label"><strong>対応メモ</strong></div>
-    <div class="col-md-6 field"><%= @student.respond_memo %></div>
-  </ul>
-
-  <ul class="row">
-    <div class="col-md-6 label"><strong>生徒情報作成日時</strong></div>
-    <div class="col-md-6 field"><%= @student.created_at %></div>
-  </ul>
-
-  <ul class="row">
-    <div class="col-md-6 label"><strong>生徒情報更新日時</strong></div>
-    <div class="col-md-6 field"><%= @student.updated_at %></div>
-  </ul>
-
-<table class="table">
+<div class="trans_button">
+  <button type="button" class="btn btn-warning"  ><%= link_to 'この生徒を編集', edit_student_path(@student) %></button>
+  <button type="button" class="btn btn-info"  ><%= link_to '生徒検索一覧へ', students_path %></button>
 </div>
+<br>
+<%= form_with(model: @student, local: true) do |form| %>
 
+  <p id="notice"><%= notice %></p>
 
-<%= link_to '編集画面に行く', edit_student_path(@student) %>
+<p>
+  <strong>生徒番号</strong></div>
+  <%= @student.number %>
+</p>
+<br>
+<p>  
+  <strong>生徒氏名</strong>
+  <%= @student.name %>
+</p>
+<br>
+<p>  
+ <strong>通塾コース</strong>
+ <%= @student.course_i18n %>
+</p>
+<br>
+<p>
+  <strong>在籍状況</strong>
+  <%= @student.enrollment_status_i18n %>
+</p>
+<br>
+<p>
+  <strong>通塾校舎</strong>
+  <%= @student.site_i18n %>
+</p>
+<br>
+
+<p>
+  <strong>学年</strong></div>
+  <%= @student.school_year_i18n %>
+</p>
+<br>
+<p>
+  <strong>保護者氏名</strong>
+  <%= @student.parent_name %>
+</p>
+<br>
+
+<p>
+  <strong>電話番号</strong>
+  <%= @student.phone_number %>
+</p>
+<br>
+
+<p>
+<strong>メールアドレス</strong>
+<%= @student.email_address %>
+</p>
+<br>
+
+<p>
+  <strong>住所</strong>
+  <%= @student.live_address %>
+</p>
+<br>
+
+<p>
+  <strong>対応メモ</strong>
+  <%= @student.respond_memo %>
+</p>
+<br>
+
+<p>
+  <strong>生徒情報作成日時</strong>
+  <%= @student.created_at %>
+</p>
+<br>
+
+<p>
+  <strong>生徒情報更新日時</strong>
+  <%= @student.updated_at %>
+</p>
+
 <br>
 <br>
-<button type="button" class="btn btn-info btn-sm"><%= link_to '生徒検索一覧へ', students_path %></button>
-<%= link_to "申請フォーム送付", {controller: "mailer/students", action: "send_form", student_id: @student.id}, method: :post,data: {confirm: "この生徒へ休退塾申請を送信しますか？"} %>
+<button type="button" class="btn btn-danger" ><%= link_to "申請フォーム送付", {controller: "mailer/students", action: "send_form", student_id: @student.id}, method: :post,data: {confirm: "この生徒へ休退塾申請を送信しますか？"} %></div>
 
 <br>
 <% end %>

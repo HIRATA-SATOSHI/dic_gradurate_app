@@ -1,9 +1,11 @@
-<%= link_to '生徒検索一覧', students_path %>
-<% if current_staff.admin? %>
-  <%= link_to 'スタッフ一覧', admin_staffs_path %>
-<% end %>
-<br>
-<%= search_form_for @q do |f| %>
+<div class="trans_button">
+  <button type="button" class="btn btn-success"><%= link_to '生徒検索一覧', students_path %></button>
+    <% if current_staff.admin? %>
+      <button type="button" class="btn btn-info"><%= link_to 'スタッフ一覧', admin_staffs_path %></button>
+    <% end %>
+</div>
+<div class="search">
+  <%= search_form_for @q do |f| %>
     <%= f.label :form, "生徒名検索" %>
     <%= f.search_field :name_cont %>
 <br>
@@ -29,7 +31,8 @@
     <%= f.date_field :f_month_lt, include_blank: true %>
 <br>
     <%= f.submit "検索" %>
-<% end %>
+  <% end %>
+</div>
 <br>
 <h5>休塾・退塾申請生徒一覧</h5>
 

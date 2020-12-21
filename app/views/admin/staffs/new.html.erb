@@ -1,7 +1,11 @@
-<h1>管理者用</h1>
-<br>
+<h4>管理者用 スタッフ登録画面</h4>
 <br>
 
+<% if current_staff.admin? %>
+  <button type="button" class="btn btn-info"><%= link_to 'スタッフ一覧', admin_staffs_path %></button>
+<% end %>
+<br>
+<br>
 <% if @staff.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@staff.errors.count, "error") %> prohibited this <%= @staff.name %> from being saved:</h2>
@@ -14,6 +18,3 @@
 <% end %>
 
 <%= render 'form', staff: @staff %>
-<% if current_staff.admin? %>
-  <%= link_to 'スタッフ一覧', admin_staffs_path %>
-<% end %>
