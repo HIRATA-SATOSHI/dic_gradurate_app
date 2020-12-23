@@ -28,7 +28,7 @@ class Admin::StaffsController < ApplicationController
       flash[:notice] =  "スタッフ #{@staff.name} 更新しました"
       redirect_to admin_staffs_path
     else
-      render :edit, notice: "管理者がいなくなりますので #{@staff.name} の管理者権限を外しての更新はできません"
+      render :edit, notice: "管理者がいなくなりますので更新はできません"
     end
   end
 
@@ -39,7 +39,7 @@ class Admin::StaffsController < ApplicationController
     if @staff.destroy
       redirect_to admin_staffs_path, notice: "ユーザー #{@staff.name} を削除しました"
     else
-      redirect_to admin_staffs_path, notice: "管理者がいなくなりますので #{@staff.name} を削除できません"
+      redirect_to admin_staffs_path, notice: "管理者がいなくなりますので削除はできません"
     end
   end
   

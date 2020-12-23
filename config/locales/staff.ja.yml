@@ -1,4 +1,9 @@
 ja:
+  notice:
+    create: 作成しました！
+    update: 編集しました！
+    destroy: 削除しました！
+    
   activerecord:
     models:
       staff: スタッフ 
