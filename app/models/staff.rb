@@ -1,6 +1,6 @@
 class Staff < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  before_destroy :admin_staff_destroy_action
+  before_update :admin_staff_update_action
   validates :name, :department, presence: true
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
@@ -13,4 +13,19 @@ class Staff < ApplicationRecord
          management_department: 5
        }
 
+  private
+
+  def admin_staff_destroy_action
+    if Staff.where(admin: true).count == 1 && self.admin
+      throw(:abort)
+    end
+  end   
+   
+  def admin_staff_update_action
+    @admin_staff = Staff.where(admin: true)
+    if (@admin_staff.count == 1 && @admin_staff.first == self) && !(self.admin)      
+       throw :abort        
+    end
+  end      
+  
 end
