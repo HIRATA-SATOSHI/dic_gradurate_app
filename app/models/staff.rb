@@ -16,15 +16,15 @@ class Staff < ApplicationRecord
   private
 
   def admin_staff_destroy_action
-    if Staff.where(admin: true).count == 1 && self.admin
+    if Staff.where(admin: true).count == 1 && current_staff.admin?
       throw(:abort)
     end
   end   
    
   def admin_staff_update_action
     @admin_staff = Staff.where(admin: true)
-    if (@admin_staff.count == 1 && @admin_staff.first == self) && !(self.admin)      
-       throw :abort        
+    if (@admin_staff.count == 1 && @admin_staff.first == self) && current_staff.admin?     
+      throw :abort        
     end
   end      
   

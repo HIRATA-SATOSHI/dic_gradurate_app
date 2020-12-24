@@ -29,7 +29,9 @@
 
   </div>
 </nav> 
-  
+<% if alert %>
+<p class="alert alert-error"><%= alert %></p>
+<% end %>
   <%= yield %>
 </body>
 </html>
