@@ -16,7 +16,8 @@ class Staff < ApplicationRecord
   private
 
   def admin_staff_destroy_action
-    if Staff.where(admin: true).count == 1 && current_staff.admin?
+   #if Staff.where(admin: true).count == 1 && current_staff.admin?
+    if self.admin? && Staff.where(admin: :true).count == 1
       throw(:abort)
     end
   end   
