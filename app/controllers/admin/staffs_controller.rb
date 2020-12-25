@@ -21,13 +21,17 @@ class Admin::StaffsController < ApplicationController
   end
 
   def edit
+ 
   end
 
   def update
+    @staff.login_staff = current_staff.id
+
     if @staff.update(staff_params)
       flash[:notice] =  "スタッフ #{@staff.name} 更新しました"
       redirect_to admin_staffs_path
     else
+
       render :edit, notice: "管理者がいなくなりますので更新はできません"
     end
   end

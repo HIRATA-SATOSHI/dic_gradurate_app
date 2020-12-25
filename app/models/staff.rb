@@ -1,4 +1,5 @@
 class Staff < ApplicationRecord
+  attribute :login_staff, :integer
   before_destroy :admin_staff_destroy_action
   before_update :admin_staff_update_action
   validates :name, :department, presence: true
@@ -21,9 +22,10 @@ class Staff < ApplicationRecord
     end
   end   
    
+
   def admin_staff_update_action
     @admin_staff = Staff.where(admin: true)
-    if (@admin_staff.count == 1 && @admin_staff.first == self) || @current_staff.admin?   
+    if (@admin_staff.count == 1 && @admin_staff.first == self) || Staff.find(login_staff).admin?
        throw(:abort)    
     end
   end      
