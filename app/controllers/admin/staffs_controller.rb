@@ -25,8 +25,7 @@ class Admin::StaffsController < ApplicationController
   end
 
   def update
-    @staff.login_staff = current_staff.id
-
+   
     if @staff.update(staff_params)
       flash[:notice] =  "スタッフ #{@staff.name} 更新しました"
       redirect_to admin_staffs_path

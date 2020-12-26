@@ -25,8 +25,8 @@ class Staff < ApplicationRecord
 
   def admin_staff_update_action
     @admin_staff = Staff.where(admin: true)
-    if (@admin_staff.count == 1 && @admin_staff.first == self) || Staff.find(login_staff).admin?
-       throw(:abort)    
+    if (@admin_staff.count == 1 && @admin_staff.first == self) && !(self.admin)  
+       throw(:abort)
     end
   end      
   
