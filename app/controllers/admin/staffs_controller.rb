@@ -25,12 +25,15 @@ class Admin::StaffsController < ApplicationController
   end
 
   def update
-   
+    @staff.login_staff_id = current_staff.id
     if @staff.update(staff_params)
       flash[:notice] =  "スタッフ #{@staff.name} 更新しました"
-      redirect_to admin_staffs_path
+      if @staff.admin?
+         redirect_to admin_staffs_path
+      else
+         redirect_to students_path
+      end
     else
-
       render :edit, notice: "管理者がいなくなりますので更新はできません"
     end
   end
@@ -39,6 +42,8 @@ class Admin::StaffsController < ApplicationController
   end
 
   def destroy
+
+    @staff.login_staff_id = current_staff.id
     if @staff.destroy
       redirect_to admin_staffs_path, notice: "ユーザー #{@staff.name} を削除しました"
     else
@@ -48,8 +53,12 @@ class Admin::StaffsController < ApplicationController
   
   private
   def require_admin
-    unless current_staff.admin?
+    if current_staff.present? 
+      unless current_staff.admin?
         redirect_to students_path, notice: "あなたは管理者ではありません"
+      end
+    else 
+      redirect_to root_path
     end
   end
 
